@@ -36,3 +36,10 @@ The principle of neural style transfer is to define two distance functions, one 
 In summary, we’ll take the base input image, a content image that we want to match, and the style image that we want to match. We’ll transform the base input image by minimizing the content and style distances (losses) with backpropagation, creating an image that matches the content of the content image and the style of the style image. (?)
 
 In this case, the loss function will be formed by the content-image loss function --which represents how far is the generated image from the content one-- and the style-image loss function --which represents how well the style has been emulated--. (FORMULASSSS!).
+
+![](https://cdn-images-1.medium.com/max/1600/1*Wd0L4_LA77g5cLWon7L3Hw.png)
+
+![](https://cdn-images-1.medium.com/max/1600/1*3LnRslYfEIqdLmVDP3PP3w.png)
+
+![](https://cdn-images-1.medium.com/max/1600/1*F3yL2YQCQ3BH3cGWBRF9Hw.png)
+
