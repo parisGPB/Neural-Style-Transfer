@@ -1,5 +1,17 @@
 
 # STYLE TRANSFER - DLAI TEAM #5
+This project is carried out by ETSETB students for the Deep Learning for Artificial Intelligence course. 
+
+## Index:
+1. Goals
+2. What is Style Transfer?
+3. Types of style transfer studied
+4. Implementation Overview
+5. NN Structure
+6. Loss functions
+7. Gram Matrix
+8. Results
+9. References
 
 ## Goals:
 - Emulate the Style Transfer project
@@ -8,6 +20,21 @@
 
 ## What is Style Transfer?
 Neural style transfer is an optimization technique used to take three images, a content image, a style reference image (such as an artwork by a famous painter), and the input image you want to style — and blend them together such that the input image is transformed to look like the content image, but “painted” in the style of the style image.
+
+## Types of style transfer studied
+(Quins tipus d'style transfer s'han trobat)
+- Online
+- Offline
+- Arbitrary?
+
+## Implementation Overview
+(Que hem fet finalment)
+- Basic Style Transfer
+- Improved Style Transfer
+- Offline
+### Basic Style Transfer
+### Improved Style Transfer
+### Offline -> ?
 
 ## NN Structure
  ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/NNstructure.jpeg)
@@ -19,16 +46,7 @@ The first layers extract the most detailed features of the input image. On the o
 (REVIEW & REWRITE THIS LAST TEXT)
 LOW LEVEL FEATURES / HIGH LEVEL FEATURES
 
-## Gram Matrix
-The Gram Matrix is used to compare both the style image and the output one.
 
-The style representation of an image is described as the correlation of the different filter responses given by the Gram matrix.
-
-Given the first layer of the trained network and a CxHxW vector space is obtained, where C is the number of filters, H is the height of the image and W the width. From these parameters, we compute the Gram Matrix. To obtain it, different rows are chosen and their inner product computed in order to see which neurons tend to be activated at the same time.
-
-
-(FORMULA G^l_ij)
-"where Gˡᵢⱼ is the inner product between the vectorized feature map i and j in layer l. We can see that Gˡᵢⱼ generated over the feature map for a given image represents the correlation between feature maps i and j."
 
 
 ## Loss functions
@@ -43,3 +61,25 @@ In this case, the loss function will be formed by the content-image loss functio
 
 ![](https://cdn-images-1.medium.com/max/1600/1*F3yL2YQCQ3BH3cGWBRF9Hw.png)
 
+
+## Gram Matrix
+The Gram Matrix is used to compare both the style image and the output one.
+The style representation of an image is described as the correlation of the different filter responses given by the Gram matrix.
+Given the first layer of the trained network and a CxHxW vector space is obtained, where C is the number of filters, H is the height of the image and W the width. From these parameters, we compute the Gram Matrix. To obtain it, different rows are chosen and their inner product computed in order to see which neurons tend to be activated at the same time.
+
+(FORMULA G^l_ij)
+"where Gˡᵢⱼ is the inner product between the vectorized feature map i and j in layer l. We can see that Gˡᵢⱼ generated over the feature map for a given image represents the correlation between feature maps i and j."
+
+## Results
+This section will sum up the results we have obtained during the carried tests.
+
+### Basic Style Transfer
+
+### Improved Style Transfer
+
+### Offline Style Transfer
+
+
+## References
+- Basic Style Transfer & Improved Style Transfer: https://github.com/titu1994/Neural-Style-Transfer
+- Offline Style Transfer
