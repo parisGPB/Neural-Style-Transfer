@@ -237,8 +237,9 @@ Content layer affects on how measure content style in the final result. High lev
     (Figure 27)  Content Layer = Conv5_2
     (Figure 28)  Content Layer = Conv5_2 Content_weight= 100 Style_weight= 1
 
+
 <p align="center">
-  <img width="500" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/232425262728.png">
+  <img width="1000" height="450" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/232425262728.png">
 </p>
 
 
