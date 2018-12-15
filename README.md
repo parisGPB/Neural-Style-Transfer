@@ -7,10 +7,9 @@ This project is carried out by ETSETB students for the Deep Learning for Artific
 2. What is Style Transfer?
 3. Types of style transfer studied
 4. Basic Neural Style Transfer
-   4.1 CNN Structure
-   i.
-   4.2 Loss functions
-   4.3 Gram Matrix
+      4.1 CNN Structure
+      4.2 Loss functions
+      4.3 Gram Matrix
 5. Basic Neural Style Transfer
 6. Improved Neural Style Transfer
 7. Fast Neural Style Transfer
