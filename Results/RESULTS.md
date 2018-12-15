@@ -239,7 +239,7 @@ Content layer affects on how measure content style in the final result. High lev
 
 
 <p align="center">
-  <img width="600" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/232425262728.png">
+  <img width="600" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/232425262728--.png">
 </p>
 
 
