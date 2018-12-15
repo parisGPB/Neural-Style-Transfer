@@ -73,7 +73,7 @@ Given the first layer of the trained network a CxHxW vector space is obtained, w
 ## Arbitrary Neural Style Transfer
 
 ## Results
-All the results have been stored in the Results folder and explained in the RESULTS.md
+All the results have been stored in the Results folder and explained in the RESULTS.md located inside it.
 
 ## References
 - Basic Style Transfer & Improved Style Transfer: https://github.com/titu1994/Neural-Style-Transfer
