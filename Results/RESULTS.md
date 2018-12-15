@@ -6,8 +6,8 @@ This document has been generated to explain the different results that have been
 1. Google Cloud Environment  
 2. Results Generation
 3. Results Comparison
-    * Output X
-    * Output X
+    * Init variables
+    * Iteration results
     * A
     * A
     
@@ -96,10 +96,21 @@ The following table contain all the tests made with an identifier. All of this e
 
 To execute the different tests, two images have been selected as default.
 
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/VanGogh.pngs=200)
+- Content:
 
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/Perrete.png =250x250)
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/Perrete.png)
 
-Referncia a foto:
 
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Results/18/_at_iteration_91.png)
+-Style:
+
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/VanGogh.png)
+
+
+This image was selected because is one of the most typical in datasets of transfer stlyle. The image has a very particular texture and colors, and some elements (like the building and the moon) that are quite characteristic. 
+
+
+### Results of iterations
+
+As it has been introduced before, in each experiment the Neural Style Transfer code gives us an output image accordint to each iteration. Our modified code provide us he first 10 images according to their iterations and later on the corresponding 9 ones in steps of 10. The following image is an example of all output images in a default parameters iteration:
+
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Results/iterations.PNG)
