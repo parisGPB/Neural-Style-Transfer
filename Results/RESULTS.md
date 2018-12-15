@@ -51,7 +51,10 @@ The Neural-Style-Transfer repository have a default configuration of values such
 | pool_type           | max           | max  - ave                                                                                                                                           |
 | init_image          | noise         | content - noise - gray       
 
-All of this parameters, with the exeption of --content_layer, that has to be modified directly in the code, are set in the initial command when the execution is performed. To have a clear reference of how the Neural Style Transfer is working, 36 different experiments have been proposed. The following table contain all the tests made with an identifier. All of this experiments can be found in /2018-dlai-team5/Results/ in which the name of the folder is the identifier of the table.
+
+All of this parameters, with the exeption of --content_layer, that has to be modified directly in the code, are set in the initial command when the execution is performed. To have a clear reference of how the Neural Style Transfer is working, 36 different experiments have been proposed. 
+
+The following table contain all the tests made with an identifier. All of this experiments can be found in /2018-dlai-team5/Results/ in which the name of the folder is the identifier of the table.
 
 | Test number | Modified parameter with respect to default              |
 |-------------|---------------------------------------------------------|
@@ -89,7 +92,7 @@ All of this parameters, with the exeption of --content_layer, that has to be mod
 | 32          | Conv layer 3_2                                          |
 | 33          | Conv layer 5_2                                          |
 | 34          | Conv layer 5_2  content_weight = 100 style_weight = 1   |
-| 35          | Default content                                         |
+| 35          | Init image content                                      |
 
 
 
