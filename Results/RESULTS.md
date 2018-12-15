@@ -21,7 +21,7 @@ This document has been generated to explain the different results that have been
 
 The following requirements have been installed in a VM on Google Cloud:
 
-- Theano / Tensorflow
+- Tensorflow
 - Keras
 - CUDA (GPU) 
 - CUDNN (GPU) 
