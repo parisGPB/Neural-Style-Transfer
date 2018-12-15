@@ -6,12 +6,15 @@ This project is carried out by ETSETB students for the Deep Learning for Artific
 1. Goals
 2. What is Style Transfer?
 3. Types of style transfer studied
-4. Implementation Overview
-5. CNN Structure
-6. Loss functions
-7. Gram Matrix
-8. Results
-9. References
+4. CNN Structure
+5. Loss functions
+6. Gram Matrix
+7. Basic Neural Style Transfer
+8. Improved Neural Style Transfer
+9. Fast Neural Style Transfer
+10. Arbitrary Neural Style Transfer
+11. Results
+12. References
 
 ## Goals:
 - Understand the basics of Neural Style Transfer (NST)
@@ -63,17 +66,14 @@ Given the first layer of the trained network a CxHxW vector space is obtained, w
 
 ## Basic Neural Style Transfer
 
-### Results
-This section will sum up the results we have obtained during the carried tests.
-
 ## Improved Neural Style Transfer
-
-### Results
-This section will sum up the results we have obtained during the carried tests.
 
 ## Fast Neural Style Transfer
 
 ## Arbitrary Neural Style Transfer
+
+## Results
+All the results have been stored in the Results folder and explained in the RESULTS.md
 
 ## References
 - Basic Style Transfer & Improved Style Transfer: https://github.com/titu1994/Neural-Style-Transfer
