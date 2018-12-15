@@ -101,7 +101,7 @@ To execute the different tests, two images have been selected as default.
 ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/Perrete.png)
 
 
--Style:
+- Style:
 
 ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/VanGogh.png)
 
