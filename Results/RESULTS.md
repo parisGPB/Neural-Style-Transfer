@@ -147,33 +147,33 @@ The relation between those parameters affects directly in the priority of the al
 
 The relation of these parameters produce variations. Change the parameters but keeping the proportion, doesn’t produce any change. 
    
-   Content weight =0.25 and  Style weight = 1 (Figure 0)
-   Content weight =1 and  Style weight = 0.25 (Figure 1)
+    (Figure 0)  Content weight =0.25 and  Style weight = 1 
+    (Figure 1)  Content weight =1 and  Style weight = 0.25 
    
 When we invert the parameters of content weight and style weight, is easy to see some changes in the image.  In the original configuration, the leaves (top left) and grille(top right) have a different texture than in the Figure 1, where the original texture is more recognizable. Texture of grass and the fur are similar in both images. 
 
 Colours are different. In Figure 0, is easy to see the influence of the color of Style image, some parts, originally the darkest surfaces, are colored  in blue. In Figure 1, the original colors are mostly keeped. 
 
-   Content weigh =100 and Style weight =1 (Figure 2)
+    (Figure 2) Content weigh =100 and Style weight =1 
 
 In that case, the influence of style image is reduced at minimum. Original colors are keeped totally. The only change from the content image are changes in texture, some kind of blurred. 
 
-    Content weigh =1 and Style weight =100 (Figure 4)
+    (Figure 4) Content weigh =1 and Style weight =100 
  
 Influence of style image is total. Still keeping some remainder from the  leaves and the grill textures, but the grass have been disappear. Elements from the Style image are included without coherence with the content. Is easy to se how in the middle of the image appears an structure similar to the building of image style. Original colors have been totally lost.
 
 
 ### Total variation weight:
 
-   TV=0.0001 (Figure 5)
-   TV=0.0005 (Figure 6)
-   TV=8.5e-5 (Figure 7)
-   TV=1e-08 (Figure 8)
-   TV=1e-20 (Figure 9)
+    (Figure 5) TV=0.0001 
+    (Figure 6) TV=0.0005 
+    (Figure 7) TV=8.5e-5 
+    (Figure 8) TV=1e-08 
+    (Figure 9) TV=1e-20 
    
 Total Variation Weight try to avoid blurred effect in image. Values closest to 0 increased this effect. Also affects in the color of the image. Values far from 0 on this parameter prevent the appearance of style image colors and values close to 0 helps to expand it. 
    
-   
+### Style Layers:
 
 
 
