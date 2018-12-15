@@ -108,6 +108,8 @@ The correlation chain consists of adding correlations between neighbor layers.
 Luminance channels (LS and LC) are first extracted from the style and content images to produce an output luminance image LT. This transformation is applied before running the Style Transfer algorithm.  Using the YIQ color space, the color information of the content image is represented via the I and Q channels; these are combined with LT to produce the final color output image. 
 Being µS and µC the mean luminance of the two images and σS and σC their standard deviations, each luminance pixel in the style image is updated as:
 
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula4.png)
+
 
 ## Fast Neural Style Transfer
 
