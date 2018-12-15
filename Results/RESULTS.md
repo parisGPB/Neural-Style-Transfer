@@ -7,9 +7,9 @@ This document has been generated to explain the different results that have been
 2. Results Generation
 3. Results Comparison
     * Init variables
-    * Iteration results
-    * 
+    * Results of iterations
     * Results analysis
+         - Tunnign
     
     
 ##  Google Cloud Environment  
