@@ -73,10 +73,11 @@ This is a variation of the basic neural style transfer. The main improvements ar
 
 - Geometric Layer weight adjustment for Style inference
 
-Define the weight of style layers and content layer for each style layer. Where:
+Define the weight of style layers and content layer for each style layer.
 
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formul.png)
 
-
+Where:
 D: is the number of layers.
 d(l): is the deeper of the layer l. 
      
