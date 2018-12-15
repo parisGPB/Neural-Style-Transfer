@@ -177,10 +177,10 @@ H: image height
 
 ## Arbitrary Neural Style Transfer
 
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula9.png)
-
-
 ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula10.png)
+
+
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula9.png)
 
 
 
