@@ -7,7 +7,6 @@ This project is carried out by ETSETB students for the Deep Learning for Artific
 2. What is Style Transfer?
 3. Types of style transfer studied
 4. Basic Neural Style Transfer
-
       * CNN Structure
       * Loss functions
       * Gram Matrix
@@ -104,6 +103,11 @@ Gram Matrix with Shift activation:
 Style information is captured by a set of Gram matrices calculated through correlations within the same layer. 
 The correlation chain consists of adding correlations between neighbor layers.
 
+- Color preservation
+
+Luminance channels (LS and LC) are first extracted from the style and content images to produce an output luminance image LT. This transformation is applied before running the Style Transfer algorithm.  Using the YIQ color space, the color information of the content image is represented via the I and Q channels; these are combined with LT to produce the final color output image. 
+Being µS and µC the mean luminance of the two images and σS and σC their standard deviations, each luminance pixel in the style image is updated as:
+
 
 ## Fast Neural Style Transfer
 
@@ -114,6 +118,7 @@ All the results have been stored in the Results folder and explained in the RESU
 
 ## References
 - Basic Style Transfer & Improved Style Transfer: https://github.com/titu1994/Neural-Style-Transfer
-- Improved Style Transfer: thttps://arxiv.org/pdf/1605.04603.pdf
+- Improved Style Transfer: https://arxiv.org/pdf/1605.04603.pdf
+- Color preservation: https://arxiv.org/pdf/1606.05897.pdf
 
 
