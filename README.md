@@ -7,6 +7,7 @@ This project is carried out by ETSETB students for the Deep Learning for Artific
 2. What is Style Transfer?
 3. Types of style transfer studied
 4. Basic Neural Style Transfer
+
       * CNN Structure
       * Loss functions
       * Gram Matrix
@@ -121,7 +122,25 @@ To reduce the time needed from the original transfer style.
 Feed-forward networks are trained to solve the optimization problem. 
 
 Results are similar to both in terms of quality (and objective measurement) but ~1000x times faster to generate. However, it is lost the flexibility of the original Style Transfer that can combine two arbitrary images. This network allows to apply only one style transformation per architecture. 
-The system consists of two components: the image transformation network and the loss network. 
+The system consists of two components: the image transformation network and the loss network.
+
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula5.png)
+
+1. Image transformation network
+
+The image transformation network is a deep residual convolutional neural network. Each block have the follow structure: 
+
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula6.png)
+
+This network comprises five residual blocks. The first and last layers use 9×9 kernels; all other convolutional layers use 3×3 kernels.
+
+2. Loss network
+
+Loss function computes a scalar value measuring the difference between the output image and a target image. The image transformation network is trained using stochastic gradient descent to minimize a weighted combination of loss functions:
+
+Loss function is calculated in the same way than the loss in original Transfer Style.
+
+
 
 ## Arbitrary Neural Style Transfer
 
