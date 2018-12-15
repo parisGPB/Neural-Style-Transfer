@@ -203,7 +203,7 @@ The effect of the layers from the extremes doesn’t change textures, only color
 
 Content layer affects on how measure content style in the final result. High level layers will provide high details, but small focus in pixel value. Low level layers will provide pixel fidelity, but less flexibility to style transfer. In the following experiments we can see the different values of content layers. 
 
-    (Figure 22)  Content Layer = Conv1_2
+    (Figure 23)  Content Layer = Conv1_2
     (Figure 24)  Content Layer = Conv2_2
     (Figure 25)  Content Layer = Conv3_2
     (Figure 26)  Content Layer = Conv4_2 (default configuration)
