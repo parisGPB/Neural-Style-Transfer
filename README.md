@@ -42,7 +42,7 @@ To represent the style image, which is defined as the artistic features such as 
 The principle of neural style transfer is to define two distance functions, one that describes how different the content of two images are, Lcontent, and one that describes the difference between the two images in terms of their style, Lstyle. Then, given three images, a desired style image, a desired content image, and the input image (initialized with the content image or some noise), we try to transform the input image to minimize the content distance with the content image and its style distance with the style image.
 In summary, we’ll take the base input image, a content image that we want to match, and the style image that we want to match. We’ll transform the base input image by minimizing the content and style distances (losses) via backpropagation, creating an image that mixes the content and the style of both images. f the content image and the style of the style image. (?)
 
-In this case, the loss function will be formed by the content-image loss function --which represents how far is the generated image from the content one-- and the style-image loss function --which represents how well the style has been emulated--. Alpha and Beta are the weighting factors for content style reconstruction. Beta does not appear
+In this case, the loss function will be formed by the content-image loss function --which represents how far is the generated image from the content one-- and the style-image loss function --which represents how well the style has been emulated--. Alpha and Beta are the weighting factors for content style reconstruction. (Beta is set to 1).
 
 ![](https://cdn-images-1.medium.com/max/1600/1*Wd0L4_LA77g5cLWon7L3Hw.png)
 
@@ -50,11 +50,13 @@ In this case, the loss function will be formed by the content-image loss functio
 
 ![](https://cdn-images-1.medium.com/max/1600/1*F3yL2YQCQ3BH3cGWBRF9Hw.png)
 
+The layers used habitually for Style Loss Function are: conv1_1, conv2_1, conv3_1, conv4_1, conv5_1.
+
 
 ## Gram Matrix
 The Gram Matrix is used to compare both the style image and the output one.
 The style representation of an image is described as the correlation of the different filter responses given by the Gram matrix.
-Given the first layer of the trained network a CxHxW vector space is obtained, where C is the number of filters, H is the height of the image and W the width. From these parameters, we compute the Gram Matrix. To obtain it, different rows are chosen and their inner product computed in order to see which neurons tend to be activated at the same time.
+Given the first layer of the trained network a CxHxW vector space is obtained, where C is the number of filters, H is the height of the image and W the width. From these parameters, we compute the Gram Matrix. To obtain it, different rows are chosen and their inner product is computed in order to see which neurons tend to be activated at the same time.
 
 (FORMULA G^l_ij)
 "where Gˡᵢⱼ is the inner product between the vectorized feature map i and j in layer l. We can see that Gˡᵢⱼ generated over the feature map for a given image represents the correlation between feature maps i and j."
