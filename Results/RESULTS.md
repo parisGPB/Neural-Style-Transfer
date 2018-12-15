@@ -175,12 +175,19 @@ Total Variation Weight try to avoid blurred effect in image. Values closest to 0
    
 ### Style Layers:
 
+Probably this hyper parameter is one of the most interesting and difficult to text (for the high number of combinations). So, in order to analyze it in a reliable way, some configuration have been tested. The weight of each layer is configurated according to the number of layers, so the weight of style layers re. 
 
 
+    (Figure 10)  ['conv1_1', 'conv2_1', 'conv3_1', 'conv4_1','conv5_1'] (original values)
+    (Figure 11)  ['conv1_1', 'conv2_1', 'conv3_1', 'conv4_1']
+    (Figure 12)  ['conv1_1', 'conv2_1', 'conv3_1']
+    (Figure 13)  ['conv1_1', 'conv2_1', 'conv3_1']
+    (Figure 14)  ['conv1_1']
 
+As we can see in the previous results, deleting style layers starting from the deeper ones to the higher ones we can see how eventually the output image looks more similar to content image. Starting with little changes in the color. The changes in the texture are little differents in each image, loosing detail and beeing more general. The last image, where only conv1_1 is maintained, image shows changes mostly in color, but keep the original texture as well. The reason is that the first layers in the network are based in evaluate pixels, so the high level features characteristics from the structure of style image is loosed.
 
+Comparing those two image above, it is easy to see how the foreleg and the snout are lees defined in Figure eight figure than in the left one, where conv5_1 can provide more high level details. 
 
+ ![]( https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/two.png)
 
-   
- 
 
