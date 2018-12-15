@@ -239,4 +239,5 @@ Increasing the size of the image taking into account the reference of 224 the fi
 
 Usually, style transfer start drawing from random image, but can also work over content image. That reduces the noise effect in the output image and the final result is much better. Starting from the content, we cna see that has a direct impact in the way how style image is applied. In that case, style image only affects one part of the image, producing color and texture variations. But the rest of the image remains intact. This is because loss function converge with these changes, and do not obtain any improve changing the rest. To achieve a better result, it is necessary to modify Style and Content weight.
 
-
+    (Figure 29)  Initialization = Gray
+    (Figure 30)  Initialization = Content
