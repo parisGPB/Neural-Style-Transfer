@@ -197,7 +197,10 @@ As we can see in the previous results, deleting style layers starting from the d
 
 Comparing those two image above, it is easy to see how the foreleg and the snout are lees defined in Figure eight figure than in the left one, where conv5_1 can provide more high level details. 
 
- ![]( https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/two.png)
+<p align="center">
+  <img width="400height="300src=" https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/two.png">
+</p>
+
 
     (Figure 15)  ['conv2_1', 'conv3_1', 'conv4_1', 'conv5_1']
     (Figure 16)  ['conv3_1', 'conv4_1', 'conv5_1']
@@ -205,7 +208,7 @@ Comparing those two image above, it is easy to see how the foreleg and the snout
     (Figure 18)  ['conv5_1']
     
 <p align="center">
-  <img width="460" height="300" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/15161718.png">
+  <img width="500" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/15161718.png">
 </p>
 
 Without conf3_1, transfer style keep the color from the content image, texture is only different from the original for blurred effect. Looks like 'conv1_1','conv2_1' and 'conv3_1' have more influence in color than 'conv4_1' and 'conv5_1'. That have sense because are more closest to pixel value. Our intuition is that 'conv4_1' and 'conv5_1' are more focused in details, providing more defined textures in concrete elements of the image .Without a base on represent high level details, conv4_1 and conv5_1 are useless. 
@@ -235,7 +238,7 @@ Content layer affects on how measure content style in the final result. High lev
     (Figure 28)  Content Layer = Conv5_2 Content_weight= 100 Style_weight= 1
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/232425262728.png">
+  <img width="500" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/232425262728.png">
 </p>
 
 
