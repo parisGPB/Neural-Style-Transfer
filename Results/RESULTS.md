@@ -114,3 +114,27 @@ This image was selected because is one of the most typical in datasets of transf
 As it has been introduced before, in each experiment the Neural Style Transfer code gives us an output image accordint to each iteration. Our modified code provide us he first 10 images according to their iterations and later on the corresponding 9 ones in steps of 10. The following image is an example of all output images in a default parameters iteration:
 
 ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Results/iterations.PNG)
+
+In the first image (that correspond to initial random image after one iteration) we can recognise some shapes. The follow iterations show more details about the textures, objects and define the primary colors. Iterations 20, 30 , 40 , 50, 60, 70, 80, 90. Iteration number 100 shows much better result. The main reason is that atter iteration number 10, the loss function is converging, so is better analyze 1 photo of each 10 iterations. Now, each photo show little improves from the lasts iterations, but at the end this improvements are so small that we can presume that around the 50 iteration we get the final image, but we still calculating 100 in order to analyze different loss function for different hyperparameters. 
+
+- Loss function:
+
+The function converge around 20 iterations. At image at 50 the resulting image is practically equal than image at 100.
+ 
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Results/loss%20function.PNG)
+
+In order to evaluate more accurately the improvement of the image iteration after iteration, this image show the percentile of reduction of function loss between iterations.
+
+- Improvement function
+
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Results/improvement.PNG)
+
+It is quite clear to see that in the first iterations the improvement value es very high. The  value depends on the input variables initialization but specially in the imaga size. The bigger the image is, the more iterations are needed to converge.
+
+- Time function: 
+
+The results in time function are quite correlated to the improvement function.
+
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Results/time.PNG)
+
+
