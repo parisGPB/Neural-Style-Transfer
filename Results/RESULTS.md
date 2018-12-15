@@ -190,4 +190,19 @@ Comparing those two image above, it is easy to see how the foreleg and the snout
 
  ![]( https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/two.png)
 
+    (Figure 15)  ['conv2_1', 'conv3_1', 'conv4_1', 'conv5_1']
+    (Figure 16)  ['conv3_1', 'conv4_1', 'conv5_1']
+    (Figure 17)  [ 'conv4_1', 'conv5_1']
+    (Figure 18)  ['conv5_1']
+    
+Without conf3_1, transfer style keep the color from the content image, texture is only different from the original for blurred effect. Looks like 'conv1_1','conv2_1' and 'conv3_1' have more influence in color than 'conv4_1' and 'conv5_1'. That have sense because are more closest to pixel value. Our intuition is that 'conv4_1' and 'conv5_1' are more focused in details, providing more defined textures in concrete elements of the image .Without a base on represent high level details, conv4_1 and conv5_1 are useless. 
+
+The nexts tests are over groups of layers, selected to combine high level and down level features.
+
+    (Figure 19)  ['conv5_1']
+
+This example shows that keep intermedial layers improve the realistic effect of the artistic style. Some effects are no coherent with the context of the image, merging the dog with the floor.
+
+ 
+
 
