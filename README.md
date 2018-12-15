@@ -34,7 +34,6 @@ Neural style transfer is an optimization technique used to take three images, a 
 ## Basic Neural Style Transfer
 ### CNN Structure
  ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/NN.png)
- 
 In the image-wise NN, convolutional layers and maxpooling are typically used. Usually, pre-trained networks with large datasets --such as VGG16 & VGG19-- are used. These networks are useful since they have been trained to extract features of the input images.
 
 The first layers extract the most detailed features of the input image (pixel-level). The last layers contain the main features such as ears, mouth, etc. The deepest the layer is chosen, the more the style will be used from that input image. Alternatively, if the chosen layer is extracting low-level features, the content will be more important.
@@ -128,8 +127,10 @@ The system consists of two components: the image transformation network and the 
 
 1. Image transformation network
 
-The image transformation network is a deep residual convolutional neural network. Each block have the follow structure: 
+The image transformation network is a deep residual convolutional neural network. Each block have the follow structure:
+
 ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula6.png)
+
 This network comprises five residual blocks. The first and last layers use 9×9 kernels; all other convolutional layers use 3×3 kernels.
 
 2. Loss network
@@ -148,8 +149,8 @@ Instance Normalization
 ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula8.png)
 
 Where: 
-T: batch size
-W: image weight
+T: batch size;
+W: image weight;
 H: image height
 
 ## Arbitrary Neural Style Transfer
