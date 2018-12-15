@@ -75,7 +75,7 @@ This is a variation of the basic neural style transfer. The main improvements ar
 
 Define the weight of style layers and content layer for each style layer.
 
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formul.png)
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula.png)
 
 Where:
 D: is the number of layers.
