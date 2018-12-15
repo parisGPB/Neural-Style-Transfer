@@ -263,3 +263,5 @@ Usually, style transfer start drawing from random image, but can also work over 
 
     (Figure 29)  Initialization = Gray
     (Figure 30)  Initialization = Content
+    
+Reference to Google Doc images: https://docs.google.com/document/d/1aKH6Gn1-q3Uh38uj0VJ1gHty0znnJ-eQxN1pytQL_uU/edit#
