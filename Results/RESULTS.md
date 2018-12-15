@@ -61,44 +61,6 @@ All of this parameters, with the exeption of --content_layer, that has to be mod
 
 The following table contain all the tests made with an identifier. All of this experiments can be found in /2018-dlai-team5/Results/ in which the name of the folder is the identifier of the table.
 
-| Test number | Modified parameter with respect to default              |
-|-------------|---------------------------------------------------------|
-| 1           | Default configuration                                   |
-| 2           | style_weight = 0.25, content_weight = 1                 |
-| 3           | style_weight = 100, content_weight = 1                  |
-| 4           | style_weight = 1, content_weight = 100                  |
-| 5           | tv_weight = 1e-4                                        |
-| 6           | tv_weight = 5e-4                                        |
-| 7           | tv_weight = 1e-8                                        |
-| 8           | tv_weight = 1e-20                                       |
-| 9           | ['conv1_1', 'conv2_1', 'conv3_1', 'conv4_1', 'conv5_1'] |
-| 10          | ['conv1_1', 'conv2_1', 'conv3_1', 'conv4_1']            |
-| 11          | ['conv1_1', 'conv2_1', 'conv3_1'']                      |
-| 12          | ['conv1_1', 'conv2_1']                                  |
-| 13          | ['conv1_1']                                             |
-| 14          | [ 'conv2_1', 'conv3_1', 'conv4_1', 'conv5_1']           |
-| 15          | ['conv3_1', 'conv4_1', 'conv5_1']                       |
-| 16          | [ 'conv4_1', 'conv5_1']                                 |
-| 17          | ['conv5_1']                                             |
-| 18          | ['conv1_1', 'conv3_1', 'conv5_1']                       |
-| 19          | ['conv1_1', 'conv3_1']                                  |
-| 20          | Cristian face                                           |
-| 21          | Clara face                                              |
-| 22          | Guillem face                                            |
-| 23          | Marc face                                               |
-| 24          | pool_type = ave                                         |
-| 25          | init_image = gray                                       |
-| 26          | ['conv1_1', 'conv2_1']                                  |
-| 27          | Cristian init_image=content                             |
-| 28          | Image size 112                                          |
-| 29          | Image size 448                                          |
-| 30          | Conv layer 1_2                                          |
-| 31          | Conv layer 2_2                                          |
-| 32          | Conv layer 3_2                                          |
-| 33          | Conv layer 5_2                                          |
-| 34          | Conv layer 5_2  content_weight = 100 style_weight = 1   |
-| 35          | Init image content                                      |
-
 
 | Test number | Modified parameter with respect to default              |   | Test number | Modified parameter with respect to default                                              |
 |-------------|---------------------------------------------------------|---|------|------------------------------------------------------|
@@ -119,9 +81,6 @@ The following table contain all the tests made with an identifier. All of this e
 | 15          | ['conv3_1', 'conv4_1', 'conv5_1']                       |   | 32   | Conv layer 3_2                                       |
 | 16          | [ 'conv4_1', 'conv5_1']                                 |   | 33   | Conv layer 5_2                                       |
 | 17          | ['conv5_1']                                             |   | 34   | Conv layer 5_2 content_weight = 100 style_weight = 1 |
-
-
-
 
 
 To execute the different tests, two images have been selected as default.
