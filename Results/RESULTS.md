@@ -82,7 +82,7 @@ The following table contain all the tests made with an identifier. All of this e
 | 22          | Guillem face                                            |
 | 23          | Marc face                                               |
 | 24          | pool_type = ave                                         |
-| 25          | init_image=gray                                         |
+| 25          | init_image = gray                                       |
 | 26          | ['conv1_1', 'conv2_1']                                  |
 | 27          | Cristian init_image=content                             |
 | 28          | Image size 112                                          |
@@ -98,4 +98,4 @@ To execute the different tests, two images have been selected as default.
 
 Referncia a foto:
 
-![Perro](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Results/18/_at_iteration_91.png)
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Results/18/_at_iteration_91.png)
