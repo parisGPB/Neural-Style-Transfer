@@ -129,18 +129,28 @@ The system consists of two components: the image transformation network and the 
 1. Image transformation network
 
 The image transformation network is a deep residual convolutional neural network. Each block have the follow structure: 
-
 ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula6.png)
-
 This network comprises five residual blocks. The first and last layers use 9×9 kernels; all other convolutional layers use 3×3 kernels.
 
 2. Loss network
 
 Loss function computes a scalar value measuring the difference between the output image and a target image. The image transformation network is trained using stochastic gradient descent to minimize a weighted combination of loss functions:
-
 Loss function is calculated in the same way than the loss in original Transfer Style.
 
+Instance Normalization: The Missing Ingredient for Fast Stylization
 
+Instance Normalization is used to replace batch normalization. While batch normalization applies the normalization to a whole batch of images, instance Normalization works for a single image separately. The objective is to replace every batch normalization in the generator network with the instance normalization in order to prevent instance-specific mean and covariance shift simplifying the learning process.
+
+Batch Normalization
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula7.png)
+
+Instance Normalization
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula8.png)
+
+Where: 
+T: batch size
+W: image weight
+H: image height
 
 ## Arbitrary Neural Style Transfer
 
