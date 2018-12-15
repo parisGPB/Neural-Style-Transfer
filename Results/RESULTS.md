@@ -203,6 +203,20 @@ The nexts tests are over groups of layers, selected to combine high level and do
 
 This example shows that keep intermedial layers improve the realistic effect of the artistic style. Some effects are no coherent with the context of the image, merging the dog with the floor.
 
- 
+    (Figure 20)  ['conv1_1', 'conv5_1']
+    
+The effect of the layers from the extremes doesn’t change textures, only color and is quite similar to Figure 14, where only conv1_1 is used. Furthermore, in the following result we can see the high of detail in features. It is visually abrupted. In Figure 22 we can see how the texture applied is low level. Poorly detailed and has no coherence with the elements of the image 
 
+    (Figure 21)  ['conv1_1', 'conv5_1']
+    (Figure 22)  ['conv1_1', 'conv5_1']
 
+### Content Layers:
+
+Content layer affects on how measure content style in the final result. High level layers will provide high details, but small focus in pixel value. Low level layers will provide pixel fidelity, but less flexibility to style transfer. In the following experiments we can see the different values of content layers. 
+
+    (Figure 22) Content Layer = Conv1_2
+    (Figure 24)  Content Layer = Conv2_2
+    (Figure 25)  Content Layer = Conv3_2
+    (Figure 26)  Content Layer = Conv4_2 (default configuration)
+    (Figure 27)  Content Layer = Conv5_2
+    (Figure 28)  Content Layer = Conv5_2 Content_weight= 100 Style_weight= 1
