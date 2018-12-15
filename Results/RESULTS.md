@@ -9,7 +9,12 @@ This document has been generated to explain the different results that have been
     * Init variables
     * Results of iterations
     * Results analysis
-         - Tunnign
+         - Tuning Content weight and Style weight
+         - Total variation weight
+         - Style Layers
+         - Content Layers
+         - Image Size
+         - Initialization
     
     
 ##  Google Cloud Environment  
