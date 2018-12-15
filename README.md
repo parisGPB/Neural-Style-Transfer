@@ -6,15 +6,16 @@ This project is carried out by ETSETB students for the Deep Learning for Artific
 1. Goals
 2. What is Style Transfer?
 3. Types of style transfer studied
-4. CNN Structure
-5. Loss functions
-6. Gram Matrix
-7. Basic Neural Style Transfer
-8. Improved Neural Style Transfer
-9. Fast Neural Style Transfer
-10. Arbitrary Neural Style Transfer
-11. Results
-12. References
+4. Basic Neural Style Transfer
+   4.1 CNN Structure
+   4.2 Loss functions
+   4.3 Gram Matrix
+5. Basic Neural Style Transfer
+6. Improved Neural Style Transfer
+7. Fast Neural Style Transfer
+8. Arbitrary Neural Style Transfer
+9. Results
+10. References
 
 ## Goals:
 - Understand the basics of Neural Style Transfer (NST)
@@ -30,7 +31,8 @@ Neural style transfer is an optimization technique used to take three images, a 
 - Fast Neural Style Transfer
 - Arbitrary Neural Style Transfer
 
-## CNN Structure
+## Basic Neural Style Transfer
+### CNN Structure
  ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/NN.png)
  
 In the image-wise NN, convolutional layers and maxpooling are typically used. Usually, pre-trained networks with large datasets --such as VGG16 & VGG19-- are used. These networks are useful since they have been trained to extract features of the input images.
@@ -41,7 +43,7 @@ To represent the content image, it is used a high layer. High layers in the netw
 
 To represent the style image, which is defined as the artistic features such as textures, pattern, brightnes,etc., it is mandatory to employ a feature space originally designed to capture texture information. The first convolution layers of each block are used. Correlations between the different filter responses over the spatial extent of the feature maps are calculated. By including the feature correlations of multiple layers, it is obtained a stationary, multi-scale representation of the input image, which captures its texture information but not the global arrangement.
 
-## Loss functions
+### Loss functions
 The principle of neural style transfer is to define two distance functions, one that describes how different the content of two images are, Lcontent, and one that describes the difference between the two images in terms of their style, Lstyle. Then, given three images, a desired style image, a desired content image, and the input image (initialized with the content image or some noise), we try to transform the input image to minimize the content distance with the content image and its style distance with the style image.
 In summary, we’ll take the base input image, a content image that we want to match, and the style image that we want to match. We’ll transform the base input image by minimizing the content and style distances (losses) via backpropagation, creating an image that mixes the content and the style of both images. f the content image and the style of the style image. (?)
 
@@ -56,7 +58,7 @@ In this case, the loss function will be formed by the content-image loss functio
 The layers used habitually for Style Loss Function are: conv1_1, conv2_1, conv3_1, conv4_1, conv5_1.
 
 
-## Gram Matrix
+### Gram Matrix
 The Gram Matrix is used to compare both the style image and the output one.
 The style representation of an image is described as the correlation of the different filter responses given by the Gram matrix.
 Given the first layer of the trained network a CxHxW vector space is obtained, where C is the number of filters, H is the height of the image and W the width. From these parameters, we compute the Gram Matrix. To obtain it, different rows are chosen and their inner product is computed in order to see which neurons tend to be activated at the same time.
@@ -64,7 +66,6 @@ Given the first layer of the trained network a CxHxW vector space is obtained, w
 (FORMULA G^l_ij)
 "where Gˡᵢⱼ is the inner product between the vectorized feature map i and j in layer l. We can see that Gˡᵢⱼ generated over the feature map for a given image represents the correlation between feature maps i and j."
 
-## Basic Neural Style Transfer
 
 ## Improved Neural Style Transfer
 
