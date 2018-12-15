@@ -110,17 +110,30 @@ Being µS and µC the mean luminance of the two images and σS and σC their sta
 
 ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula4.png)
 
+There are others ways to implement Color Preservation in Style Transfer, but here it is explained the one it has been implemented.
 
 ## Fast Neural Style Transfer
+
+To reduce the time needed from the original transfer style.
+
+- Perceptual Losses for Real-Time Style Transfer and Super-Resolution:
+
+Feed-forward networks are trained to solve the optimization problem. 
+
+Results are similar to both in terms of quality (and objective measurement) but ~1000x times faster to generate. However, it is lost the flexibility of the original Style Transfer that can combine two arbitrary images. This network allows to apply only one style transformation per architecture. 
+The system consists of two components: the image transformation network and the loss network. 
 
 ## Arbitrary Neural Style Transfer
 
 ## Results
-All the results have been stored in the Results folder and explained in the RESULTS.md located inside it.
+All the results have been stored in the Results folder and explained in the RESULTS.md document located inside it.
 
 ## References
 - Basic Style Transfer & Improved Style Transfer: https://github.com/titu1994/Neural-Style-Transfer
 - Improved Style Transfer: https://arxiv.org/pdf/1605.04603.pdf
 - Color preservation: https://arxiv.org/pdf/1606.05897.pdf
-
+- Perceptual losses for Real-Time Style Transfer and Super-Resolution: https://cs.stanford.edu/people/jcjohns/papers/eccv16/JohnsonECCV16.pdf
+- Instance Normalization: The Missing Ingredient for Fast Stylization:
+https://cs.stanford.edu/people/jcjohns/papers/eccv16/JohnsonECCV16.pdf
+- Arbitrary Fast Style Transfer: https://arxiv.org/pdf/1705.06830.pdf , https://github.com/tensorflow/magenta/tree/master/magenta/models/arbitrary_image_stylization
 
