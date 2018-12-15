@@ -1,0 +1,11 @@
+Num_iter:  100
+Model:   <keras.engine.training.Model object at 0x7f58dcbc26a0>
+content_weight : 1.0
+ style_weights: [0.25]
+Total_variation_weight  : 0.0001
+Image Size:  224x224
+Content Loss Type:  0
+Content Layer:  conv4_2
+Pool Type:  max
+Feature Layers:  ['conv1_1', 'conv2_1', 'conv3_1', 'conv4_1', 'conv5_1']
+Init image:  noise
