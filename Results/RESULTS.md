@@ -173,7 +173,7 @@ Influence of style image is total. Still keeping some remainder from the  leaves
     (Figure 9) TV=1e-20 
     
 <p align="center">
-  <img width="460" height="300" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/56789.png">
+  <img width="600" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/56789.png">
 </p>
    
 Total Variation Weight try to avoid blurred effect in image. Values closest to 0 increased this effect. Also affects in the color of the image. Values far from 0 on this parameter prevent the appearance of style image colors and values close to 0 helps to expand it. 
@@ -190,7 +190,7 @@ Probably this hyper parameter is one of the most interesting and difficult to te
     (Figure 14)  ['conv1_1']
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/1011121314.png">
+  <img width="600" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/1011121314.png">
 </p>
    
 As we can see in the previous results, deleting style layers starting from the deeper ones to the higher ones we can see how eventually the output image looks more similar to content image. Starting with little changes in the color. The changes in the texture are little differents in each image, loosing detail and beeing more general. The last image, where only conv1_1 is maintained, image shows changes mostly in color, but keep the original texture as well. The reason is that the first layers in the network are based in evaluate pixels, so the high level features characteristics from the structure of style image is loosed.
