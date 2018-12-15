@@ -96,9 +96,9 @@ The following table contain all the tests made with an identifier. All of this e
 
 To execute the different tests, two images have been selected as default.
 
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/VanGogh.png)
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/VanGogh.png =250x250)
 
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/Perrete.png)
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/Perrete.png =250x250)
 
 Referncia a foto:
 
