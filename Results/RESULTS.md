@@ -8,8 +8,8 @@ This document has been generated to explain the different results that have been
 3. Results Comparison
     * Init variables
     * Iteration results
-    * A
-    * A
+    * 
+    * Results analysis
     
     
 ##  Google Cloud Environment  
@@ -117,7 +117,7 @@ As it has been introduced before, in each experiment the Neural Style Transfer c
 
 In the first image (that correspond to initial random image after one iteration) we can recognise some shapes. The follow iterations show more details about the textures, objects and define the primary colors. Iterations 20, 30 , 40 , 50, 60, 70, 80, 90. Iteration number 100 shows much better result. The main reason is that atter iteration number 10, the loss function is converging, so is better analyze 1 photo of each 10 iterations. Now, each photo show little improves from the lasts iterations, but at the end this improvements are so small that we can presume that around the 50 iteration we get the final image, but we still calculating 100 in order to analyze different loss function for different hyperparameters. 
 
-- Loss function:
+#### Loss function:
 
 The function converge around 20 iterations. At image at 50 the resulting image is practically equal than image at 100.
  
@@ -125,16 +125,29 @@ The function converge around 20 iterations. At image at 50 the resulting image i
 
 In order to evaluate more accurately the improvement of the image iteration after iteration, this image show the percentile of reduction of function loss between iterations.
 
-- Improvement function
+#### Improvement function
 
 ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Results/improvement.PNG)
 
 It is quite clear to see that in the first iterations the improvement value es very high. The  value depends on the input variables initialization but specially in the imaga size. The bigger the image is, the more iterations are needed to converge.
 
-- Time function: 
+#### Time function: 
 
 The results in time function are quite correlated to the improvement function.
 
 ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Results/time.PNG)
 
+## Results analysis
+
+Because of the huge amount of images as a result of all the test made, we will add a reference of a Google Document with all labeled images to check the final observations. In the following list, we will present the different modifications made and the conclusions we have extracted.
+
+ - Tuning Content weight and Style weight: 
+
+   The relation between those parameters affects directly in the priority of the algorithm to keep the information of style image or        content image. if content weigh is bigger tan style weigh, the generated image will be more similar to content image and vice versa. 
+
+   The relation of these parameters produce variations. Change the parameters but keeping the proportion, doesn’t produce any change. 
+
+
+   
+ 
 
