@@ -1,6 +1,15 @@
+
 ## Results obtained 
 
-This document has been generated to explain the different results that have been obtained from the Neural Style Transfer repository. The document will explain how this results have been obtained, the platform used and the different conclusions that we can extract. 
+This document has been generated to explain the different results that have been obtained from the Neural Style Transfer repository. All the results have been developed using the Google Cloud platform. A Virtual Machine with 16Gb of RAM and an specific GPU helped in executing all the algorithm iterations. The document will be scheduled as shown below:
+
+1. Google Cloud Environment  
+2. Results Generation
+3. Results Comparison
+    * Output X
+    * Output X
+    * A
+    * A
 
 | Test number | Modified parameter with respect to default |
 |-------------|:------------------------------------------:|
