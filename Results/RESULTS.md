@@ -119,8 +119,6 @@ The following table contain all the tests made with an identifier. All of this e
 | 15          | ['conv3_1', 'conv4_1', 'conv5_1']                       |   | 32   | Conv layer 3_2                                       |
 | 16          | [ 'conv4_1', 'conv5_1']                                 |   | 33   | Conv layer 5_2                                       |
 | 17          | ['conv5_1']                                             |   | 34   | Conv layer 5_2 content_weight = 100 style_weight = 1 |
-You can now import Markdown table code directly using File/Paste table data... dialog.
-
 
 
 
