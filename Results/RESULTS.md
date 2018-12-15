@@ -43,7 +43,7 @@ The Neural-Style-Transfer repository have a default configuration of values such
 | num_iter            | 100           | 200                                                                                                                                                  |
 | content_weight      | 0.25          | 0.25 - 1 - 100 - 1                                                                                                                                   |
 | style_weight        | 1             | 1 - 0.25 - 1 - 100                                                                                                                                   |
-| tv_weight           | 8.5e-5        | Probar imagenes colores similares. 1e-4, 1e-5, 1e-8, 5e-8, 1e-20Probar imagenes colores distintos. 1e-4, 1e-5, 1e-8,  5e-8,1e-20                     |
+| tv_weight           | 8.5e-5        | 1e-4, 1e-5, 1e-8,  5e-8,1e-20                     |
 | region_style_weight | 1             | 1 -0.5 - 0.1- 0.05 - 0.01                                                                                                                            |
 | img_size            | 224 x 224     | 224x224- 112x112 - 448 x 448                                                                                                                         |
 | --content_loss_type | 0             | 0 - 1 - 2                                                                                                                                            |
