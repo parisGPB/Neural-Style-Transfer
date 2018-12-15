@@ -94,7 +94,11 @@ The following table contain all the tests made with an identifier. All of this e
 | 34          | Conv layer 5_2  content_weight = 100 style_weight = 1   |
 | 35          | Init image content                                      |
 
-To execute the different tests, two images have been selected as default. 
+To execute the different tests, two images have been selected as default.
+
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/VanGogh.png)
+
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/perrete.png)
 
 Referncia a foto:
 
