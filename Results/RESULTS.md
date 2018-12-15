@@ -87,13 +87,16 @@ To execute the different tests, two images have been selected as default.
 
 - Content:
 
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/Perrete.png)
+<p align="center">
+  <img width="600" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/Perrete.png">
+</p>
 
 
 - Style:
 
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/VanGogh.png)
-
+<p align="center">
+  <img width="600" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/VanGogh.png">
+</p>
 
 This image was selected because is one of the most typical in datasets of transfer stlyle. The image has a very particular texture and colors, and some elements (like the building and the moon) that are quite characteristic. 
 
