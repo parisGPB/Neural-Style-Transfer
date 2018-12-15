@@ -11,12 +11,11 @@ This project is carried out by ETSETB students for the Deep Learning for Artific
       * CNN Structure
       * Loss functions
       * Gram Matrix
-5. Basic Neural Style Transfer
-6. Improved Neural Style Transfer
-7. Fast Neural Style Transfer
-8. Arbitrary Neural Style Transfer
-9. Results
-10. References
+5. Improved Neural Style Transfer
+6. Fast Neural Style Transfer
+7. Arbitrary Neural Style Transfer
+8. Results
+9. References
 
 ## Goals:
 - Understand the basics of Neural Style Transfer (NST)
@@ -70,6 +69,16 @@ Given the first layer of the trained network a CxHxW vector space is obtained, w
 
 ## Improved Neural Style Transfer
 
+This is a variation of the basic neural style transfer. The main improvements are:
+
+- Geometric Layer weight adjustment for Style inference
+
+     Define the weight of style layers and content layer for each style layer
+     
+- Using all layers of VGG-16 for style inference
+- Activation Shift of gram matrix
+- Correlation Chain
+
 ## Fast Neural Style Transfer
 
 ## Arbitrary Neural Style Transfer
@@ -79,3 +88,6 @@ All the results have been stored in the Results folder and explained in the RESU
 
 ## References
 - Basic Style Transfer & Improved Style Transfer: https://github.com/titu1994/Neural-Style-Transfer
+- Improved Style Transfer: thttps://arxiv.org/pdf/1605.04603.pdf
+
+
