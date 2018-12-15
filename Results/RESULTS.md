@@ -214,9 +214,29 @@ The effect of the layers from the extremes doesn’t change textures, only color
 
 Content layer affects on how measure content style in the final result. High level layers will provide high details, but small focus in pixel value. Low level layers will provide pixel fidelity, but less flexibility to style transfer. In the following experiments we can see the different values of content layers. 
 
-    (Figure 22) Content Layer = Conv1_2
+    (Figure 22)  Content Layer = Conv1_2
     (Figure 24)  Content Layer = Conv2_2
     (Figure 25)  Content Layer = Conv3_2
     (Figure 26)  Content Layer = Conv4_2 (default configuration)
     (Figure 27)  Content Layer = Conv5_2
     (Figure 28)  Content Layer = Conv5_2 Content_weight= 100 Style_weight= 1
+
+Using Conv1_2, Conv2_2 and Conv3_2 as content layers, the most part of the original pixel values is maintained. The lower level the layer is, the bigger the similarity with content image we can see. Using this measures for content image is too restrictive to see a clear style transfer effect. 
+
+Conv5_2 layer loose drastically the result so it is imposible to recognise content image. This happens probably because the references are taken from a values to far from the original pixels. Changing the content and style weights is possible to reduce this effect. 
+
+### Image Size:
+
+Image size has a direct impact in the final results, especially when the size of the input content is reduced. VGG16 and VGG19 originally are prepared to work with 224 x 244 x 3 images. So, optimized results are for this size of image. 
+
+    (Figure 29)  Image size = 224 x 224 (original configuration)
+    (Figure 30)  Image size = 112 x 112 
+    (Figure 31)  Image size = 448 x 448
+
+Increasing the size of the image taking into account the reference of 224 the final result look quite similar, but more high defined. If we reduce the size, the resulting image have more noise effects, is difficult to recognise content and colors and texture are included without sence from the original content. 
+
+### Initialization:
+
+Usually, style transfer start drawing from random image, but can also work over content image. That reduces the noise effect in the output image and the final result is much better. Starting from the content, we cna see that has a direct impact in the way how style image is applied. In that case, style image only affects one part of the image, producing color and texture variations. But the rest of the image remains intact. This is because loss function converge with these changes, and do not obtain any improve changing the rest. To achieve a better result, it is necessary to modify Style and Content weight.
+
+
