@@ -163,7 +163,6 @@ Influence of style image is total. Still keeping some remainder from the  leaves
 <p align="center">
   <img width="460" height="300" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/56789.png">
 </p>
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/56789.png)
    
 Total Variation Weight try to avoid blurred effect in image. Values closest to 0 increased this effect. Also affects in the color of the image. Values far from 0 on this parameter prevent the appearance of style image colors and values close to 0 helps to expand it. 
    
@@ -178,6 +177,10 @@ Probably this hyper parameter is one of the most interesting and difficult to te
     (Figure 13)  ['conv1_1', 'conv2_1', 'conv3_1']
     (Figure 14)  ['conv1_1']
 
+<p align="center">
+  <img width="460" height="300" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/1011121314.png">
+</p>
+   
 As we can see in the previous results, deleting style layers starting from the deeper ones to the higher ones we can see how eventually the output image looks more similar to content image. Starting with little changes in the color. The changes in the texture are little differents in each image, loosing detail and beeing more general. The last image, where only conv1_1 is maintained, image shows changes mostly in color, but keep the original texture as well. The reason is that the first layers in the network are based in evaluate pixels, so the high level features characteristics from the structure of style image is loosed.
 
 Comparing those two image above, it is easy to see how the foreleg and the snout are lees defined in Figure eight figure than in the left one, where conv5_1 can provide more high level details. 
@@ -189,6 +192,10 @@ Comparing those two image above, it is easy to see how the foreleg and the snout
     (Figure 17)  [ 'conv4_1', 'conv5_1']
     (Figure 18)  ['conv5_1']
     
+<p align="center">
+  <img width="460" height="300" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/15161718.png">
+</p>
+
 Without conf3_1, transfer style keep the color from the content image, texture is only different from the original for blurred effect. Looks like 'conv1_1','conv2_1' and 'conv3_1' have more influence in color than 'conv4_1' and 'conv5_1'. That have sense because are more closest to pixel value. Our intuition is that 'conv4_1' and 'conv5_1' are more focused in details, providing more defined textures in concrete elements of the image .Without a base on represent high level details, conv4_1 and conv5_1 are useless. 
 
 The nexts tests are over groups of layers, selected to combine high level and down level features.
@@ -214,6 +221,11 @@ Content layer affects on how measure content style in the final result. High lev
     (Figure 26)  Content Layer = Conv4_2 (default configuration)
     (Figure 27)  Content Layer = Conv5_2
     (Figure 28)  Content Layer = Conv5_2 Content_weight= 100 Style_weight= 1
+
+<p align="center">
+  <img width="460" height="300" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/232425262728.png">
+</p>
+
 
 Using Conv1_2, Conv2_2 and Conv3_2 as content layers, the most part of the original pixel values is maintained. The lower level the layer is, the bigger the similarity with content image we can see. Using this measures for content image is too restrictive to see a clear style transfer effect. 
 
