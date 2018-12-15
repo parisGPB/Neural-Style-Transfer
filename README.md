@@ -87,11 +87,23 @@ Increase the number of layers used to calculate the transfer style loss.
      
 - Activation Shift of gram matrix
      
-In general, the outputs of the image are scarce: in all the layers, each filter has few activations different from the    spatial dimensions. This results in the Gram matrices also being scattered, at the expense of the transfer quality of the style. Gram matrices contain a large number of zero entries, leaving too much freedom for the optimization procedure to interpret them incorrectly.
+In general, the outputs of the image are scarce: in all the layers, each filter has few activations different from the    spatial dimensions. This results in the scattering ot the Gram matrices, at the expense of the transfer quality of the style. Gram matrices contain a large number of zero entries, leaving too much freedom for the optimization procedure to interpret them incorrectly.
 
 This problem can be reduced by applying changed activations to eliminate dispersion.
+
+Original Gram Matrix:
+
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula1.png)
+
+Gram Matrix with Shift activation:
+
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula2.png)
      
 - Correlation Chain
+
+Style information is captured by a set of Gram matrices calculated through correlations within the same layer. 
+The correlation chain consists of adding correlations between neighbor layers.
+
 
 ## Fast Neural Style Transfer
 
