@@ -73,10 +73,23 @@ This is a variation of the basic neural style transfer. The main improvements ar
 
 - Geometric Layer weight adjustment for Style inference
 
-     Define the weight of style layers and content layer for each style layer
+Define the weight of style layers and content layer for each style layer. Where:
+
+
+
+D: is the number of layers.
+d(l): is the deeper of the layer l. 
      
 - Using all layers of VGG-16 for style inference
+
+Increase the number of layers used to calculate the transfer style loss. 
+     
 - Activation Shift of gram matrix
+     
+In general, the outputs of the image are scarce: in all the layers, each filter has few activations different from the    spatial dimensions. This results in the Gram matrices also being scattered, at the expense of the transfer quality of the style. Gram matrices contain a large number of zero entries, leaving too much freedom for the optimization procedure to interpret them incorrectly.
+
+This problem can be reduced by applying changed activations to eliminate dispersion.
+     
 - Correlation Chain
 
 ## Fast Neural Style Transfer
