@@ -98,7 +98,7 @@ To execute the different tests, two images have been selected as default.
 
 ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/VanGogh.png)
 
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/perrete.png)
+![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/Perrete.png)
 
 Referncia a foto:
 
