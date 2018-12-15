@@ -37,7 +37,8 @@ Neural style transfer is an optimization technique used to take three images, a 
 ### Offline -> ?
 
 ## NN Structure
- ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/NNstructure.jpeg)
+ ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/NN.png)
+ 
 
 In the image-wise NN, convolutional layers and maxpooling are typically used. Usually, pre-trained networks with large datasets --such as VGG16 & VGG19-- are used. These networks are useful since they have been trained to extract features of the input images.
 
