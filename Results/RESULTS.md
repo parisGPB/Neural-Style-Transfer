@@ -160,6 +160,9 @@ Influence of style image is total. Still keeping some remainder from the  leaves
     (Figure 8) TV=1e-08 
     (Figure 9) TV=1e-20 
     
+<p align="center">
+  <img width="460" height="300" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/56789.png">
+</p>
 ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/56789.png)
    
 Total Variation Weight try to avoid blurred effect in image. Values closest to 0 increased this effect. Also affects in the color of the image. Values far from 0 on this parameter prevent the appearance of style image colors and values close to 0 helps to expand it. 
