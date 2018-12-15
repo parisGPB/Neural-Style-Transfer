@@ -7,51 +7,39 @@ This project is carried out by ETSETB students for the Deep Learning for Artific
 2. What is Style Transfer?
 3. Types of style transfer studied
 4. Implementation Overview
-5. NN Structure
+5. CNN Structure
 6. Loss functions
 7. Gram Matrix
 8. Results
 9. References
 
 ## Goals:
-- Emulate the Style Transfer project
-- Understand
-- Modify some hyper-parameters (?)
+- Understand the basics of Neural Style Transfer (NST)
+- Experiment with the different hyperparameters
+- Study the different NST techniques: Improved, Fast & Arbitrary Fast Style Transfer
 
 ## What is Style Transfer?
 Neural style transfer is an optimization technique used to take three images, a content image, a style reference image (such as an artwork by a famous painter), and the input image you want to style — and blend them together such that the input image is transformed to look like the content image, but “painted” in the style of the style image.
 
 ## Types of style transfer studied
-(Quins tipus d'style transfer s'han trobat)
-- Online
-- Offline
-- Arbitrary?
-
-## Implementation Overview
-(Que hem fet finalment)
 - Basic Style Transfer
 - Improved Style Transfer
-- Offline
-### Basic Style Transfer
-### Improved Style Transfer
-### Offline -> ?
+- Fast Neural Style Transfer
+- Arbitrary Neural Style Transfer
 
-## NN Structure
+## CNN Structure
  ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/NN.png)
  
-
 In the image-wise NN, convolutional layers and maxpooling are typically used. Usually, pre-trained networks with large datasets --such as VGG16 & VGG19-- are used. These networks are useful since they have been trained to extract features of the input images.
 
-The first layers extract the most detailed features of the input image. On the other hand, the last layers contain main features (such as ears, mouth, etc.). The deepest the layer is chosen, the more the style will be used from that input image. Alternatively, if the chosen layer is extracting low-level features, the content will be more important
+The first layers extract the most detailed features of the input image (pixel-level). The last layers contain the main features such as ears, mouth, etc. The deepest the layer is chosen, the more the style will be used from that input image. Alternatively, if the chosen layer is extracting low-level features, the content will be more important.
 
-(REVIEW & REWRITE THIS LAST TEXT)
-LOW LEVEL FEATURES / HIGH LEVEL FEATURES
+To represent the content image, it is used a high layer. High layers in the network capture the high-level content in terms of objects and their arrangement in the input image but do not constrain the exact pixel values of the reconstruction. In contrast, reconstructions from the lower layers simply reproduce the exact pixel values of the original image.
 
-
-
+To represent the style image, which is defined as the artistic features such as textures, pattern, brightnes,etc., it is mandatory to employ a feature space originally designed to capture texture information. The first convolution layers of each block are used. Correlations between the different filter responses over the spatial extent of the feature maps are calculated. By including the feature correlations of multiple layers, it is obtained a stationary, multi-scale representation of the input image, which captures its texture information but not the global arrangement.
 
 ## Loss functions
-The principle of neural style transfer is to define two distance functions, one that describes how different the content of two images are, Lcontent, and one that describes the difference between the two images in terms of their style, Lstyle. Then, given three images, a desired style image, a desired content image, and the input image (initialized with the content image), we try to transform the input image to minimize the content distance with the content image and its style distance with the style image. (PREGUNTAR CRISITAN SI HAY 3 IMAGENES!)
+The principle of neural style transfer is to define two distance functions, one that describes how different the content of two images are, Lcontent, and one that describes the difference between the two images in terms of their style, Lstyle. Then, given three images, a desired style image, a desired content image, and the input image (initialized with the content image or some noise), we try to transform the input image to minimize the content distance with the content image and its style distance with the style image.
 In summary, we’ll take the base input image, a content image that we want to match, and the style image that we want to match. We’ll transform the base input image by minimizing the content and style distances (losses) with backpropagation, creating an image that matches the content of the content image and the style of the style image. (?)
 
 In this case, the loss function will be formed by the content-image loss function --which represents how far is the generated image from the content one-- and the style-image loss function --which represents how well the style has been emulated--. (FORMULASSSS!).
@@ -71,16 +59,19 @@ Given the first layer of the trained network and a CxHxW vector space is obtaine
 (FORMULA G^l_ij)
 "where Gˡᵢⱼ is the inner product between the vectorized feature map i and j in layer l. We can see that Gˡᵢⱼ generated over the feature map for a given image represents the correlation between feature maps i and j."
 
-## Results
+## Basic Neural Style Transfer
+
+### Results
 This section will sum up the results we have obtained during the carried tests.
 
-### Basic Style Transfer
+## Improved Neural Style Transfer
 
-### Improved Style Transfer
+### Results
+This section will sum up the results we have obtained during the carried tests.
 
-### Offline Style Transfer
+## Fast Neural Style Transfer
 
+## Arbitrary Neural Style Transfer
 
 ## References
 - Basic Style Transfer & Improved Style Transfer: https://github.com/titu1994/Neural-Style-Transfer
-- Offline Style Transfer
