@@ -11,6 +11,7 @@ This project is carried out by ETSETB students for the Deep Learning for Artific
       * CNN Structure
       * Loss functions
       * Gram Matrix
+      * Main hyperparameters
 5. Improved Neural Style Transfer
 6. Fast Neural Style Transfer
 7. Arbitrary Neural Style Transfer
@@ -65,6 +66,27 @@ Given the first layer of the trained network a CxHxW vector space is obtained, w
 (FORMULA G^l_ij)
 "where Gˡᵢⱼ is the inner product between the vectorized feature map i and j in layer l. We can see that Gˡᵢⱼ generated over the feature map for a given image represents the correlation between feature maps i and j."
 
+### Main hyperparameters
+
+The follow hyperparameters can be used to modify the output of the transfer style. Differents tests have been done changing the different defauled values and will be discussed in the results section.
+
+- Content weight: weight of the content image in the generated image. Value by default: 0.25.
+
+- Style weight: weight of the style image in the generated image. Value by default 1.
+
+- Total variations weight: Total variation loss is the sum of the absolute differences for neighboring pixel-values in the input images. Smaller values tend to produce sharper images. Value by default: 8,5e-5
+
+- Image size: size of the generated image. Value by default: 224x224x3
+
+- Content layer: Layer from the model used to evaluate similarity between content image and generated image. Value by default: conv4_2
+
+- Feature layers: Layers from the model used to evaluate similarity between style image and generated image. Value by default: conv1_1, conv2_1, conv3_1, 'conv4_1, conv5_1.
+
+- Pool type: use max pooling or average pooling in the model. Value by default: Max pooling
+
+- Initial image: define the initial image that will be modified at each iteration. 
+
+- Preserve color: apply modifications in image style in order to preserve color from the content image. By default this option is off.
 
 ## Improved Neural Style Transfer
 
