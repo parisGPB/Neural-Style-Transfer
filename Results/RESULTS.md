@@ -90,6 +90,7 @@ To execute the different tests, two images have been selected as default.
   <img width="500" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/Perrete.png">
 </p>
 
+This content image selected for the different textures (grass, leaves,fur,grille), objects( dog, floor, hose, background) and colors in the image. 
 
 - Style:
 
