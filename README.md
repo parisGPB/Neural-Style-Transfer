@@ -61,9 +61,10 @@ The layers used habitually for Style Loss Function are: conv1_1, conv2_1, conv3_
 The Gram Matrix is used to compare both the style image and the output one.
 The style representation of an image is described as the correlation of the different filter responses given by the Gram matrix.
 Given the first layer of the trained network a CxHxW vector space is obtained, where C is the number of filters, H is the height of the image and W the width. From these parameters, we compute the Gram Matrix. To obtain it, different rows are chosen and their inner product is computed in order to see which neurons tend to be activated at the same time.
-
-(FORMULA G^l_ij)
-"where Gˡᵢⱼ is the inner product between the vectorized feature map i and j in layer l. We can see that Gˡᵢⱼ generated over the feature map for a given image represents the correlation between feature maps i and j."
+<p align="center">
+  <img width="200" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula1.png">
+</p>
+"where Gˡ is the inner product between the both vectorized feature maps in layer l. We can see that Gˡ, generated over the feature map for a given image represents the correlation between feature maps i and j."
 
 ### Main hyperparameters
 
