@@ -1,6 +1,6 @@
 
 # STYLE TRANSFER - DLAI TEAM #5
-This project is carried out by ETSETB students for the Deep Learning for Artificial Intelligence course. 
+This project is carried out by ETSETB students for the Deep Learning for Artificial Intelligence course. The team is formed by Clara Rendé, Cristian Cuadrado, Marc Hernandez and Guillem París.
 
 Our notebook: https://telecombcn-dl.github.io/2018-dlai-team5/
 
@@ -18,7 +18,9 @@ Our notebook: https://telecombcn-dl.github.io/2018-dlai-team5/
 6. Fast Neural Style Transfer
 7. Arbitrary Neural Style Transfer
 8. Results
-9. References
+9. Conclusions
+10. Further Steps
+11. References
 
 ## Goals:
 - Understand the basics of Neural Style Transfer (NST)
@@ -209,6 +211,10 @@ The loss function is calculated applying the structure previously defined and us
 
 ## Results
 All the results have been stored in the Results folder and explained in the RESULTS.md document located inside it.
+
+## Conclusions
+
+## Further Steps
 
 ## References
 - Basic Style Transfer & Improved Style Transfer: https://github.com/titu1994/Neural-Style-Transfer
