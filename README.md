@@ -50,11 +50,7 @@ In summary, we’ll take the base input image, a content image that we want to m
 In this case, the loss function will be formed by the content-image loss function --which represents how far is the generated image from the content one-- and the style-image loss function --which represents how well the style has been emulated--. Alpha and Beta are the weighting factors for content style reconstruction. (In the formula bewlo, beta is set to 1).
 <p align="center">
   <img width="460" src="https://cdn-images-1.medium.com/max/1600/1*Wd0L4_LA77g5cLWon7L3Hw.png">
-</p>
-<p align="center">
   <img width="460" src="https://cdn-images-1.medium.com/max/1600/1*3LnRslYfEIqdLmVDP3PP3w.png">
-</p>
-<p align="center">
   <img width="460" src="https://cdn-images-1.medium.com/max/1600/1*F3yL2YQCQ3BH3cGWBRF9Hw.png">
 </p>
 The layers used habitually for Style Loss Function are: conv1_1, conv2_1, conv3_1, conv4_1, conv5_1.
@@ -96,9 +92,9 @@ This is a variation of the basic neural style transfer. The main improvements ar
 - Geometric Layer weight adjustment for Style inference
 
 Define the weight of style layers and content layer for each style layer.
-
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula.png)
-
+<p align="center">
+  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula.png">
+</p>
 Where:
 D: is the number of layers.
 d(l): is the deeper of the layer l. 
@@ -114,13 +110,13 @@ In general, the outputs of the image are scarce: in all the layers, each filter 
 This problem can be reduced by applying changed activations to eliminate dispersion.
 
 Original Gram Matrix:
-
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula1.png)
-
+<p align="center">
+  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula1.png">
+</p>
 Gram Matrix with Shift activation:
-
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula2.png)
-     
+<p align="center">
+  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula2.png">
+</p>     
 - Correlation Chain
 
 Style information is captured by a set of Gram matrices calculated through correlations within the same layer. 
@@ -130,9 +126,9 @@ The correlation chain consists of adding correlations between neighbor layers.
 
 Luminance channels (LS and LC) are first extracted from the style and content images to produce an output luminance image LT. This transformation is applied before running the Style Transfer algorithm.  Using the YIQ color space, the color information of the content image is represented via the I and Q channels; these are combined with LT to produce the final color output image. 
 Being µS and µC the mean luminance of the two images and σS and σC their standard deviations, each luminance pixel in the style image is updated as:
-
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula4.png)
-
+<p align="center">
+  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula4.png">
+</p>
 There are others ways to implement Color Preservation in Style Transfer, but here it is explained the one it has been implemented.
 
 ## Fast Neural Style Transfer
@@ -145,15 +141,15 @@ Feed-forward networks are trained to solve the optimization problem.
 
 Results are similar to both in terms of quality (and objective measurement) but ~1000x times faster to generate. However, it is lost the flexibility of the original Style Transfer that can combine two arbitrary images. This network allows to apply only one style transformation per architecture. 
 The system consists of two components: the image transformation network and the loss network.
-
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula5.png)
-
+<p align="center">
+  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula5.png">
+</p>
 1. Image transformation network
 
 The image transformation network is a deep residual convolutional neural network. Each block have the follow structure:
-
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula6.png)
-
+<p align="center">
+  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula6.png">
+</p>
 This network comprises five residual blocks. The first and last layers use 9×9 kernels; all other convolutional layers use 3×3 kernels.
 
 2. Loss network
