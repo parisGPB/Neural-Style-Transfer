@@ -2,7 +2,7 @@
 # STYLE TRANSFER - DLAI TEAM #5
 This project is carried out by ETSETB students for the Deep Learning for Artificial Intelligence course. The team is formed by Clara Rendé, Cristian Cuadrado, Marc Hernandez and Guillem París.
 
-Our notebook: https://telecombcn-dl.github.io/2018-dlai-team5/
+Our [notebook](https://telecombcn-dl.github.io/2018-dlai-team5/)
 
 ## Index:
 1. Goals
@@ -211,8 +211,8 @@ The loss function is calculated applying the structure previously defined and us
 
 ## Results
 All the results have been stored in the Results folder and explained in the RESULTS.md document located inside it.
-Find them here: 
-![] https://github.com/telecombcn-dl/2018-dlai-team5/Results/Results.md
+
+Our [results](https://github.com/telecombcn-dl/2018-dlai-team5/Results/Results.md)
 
 ## Conclusions
 
