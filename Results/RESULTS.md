@@ -29,7 +29,7 @@ The following requirements have been installed in a VM on Google Cloud:
 - Numpy
 - h5py
 
-All the requirements have been installed in a virtual environtment with the main repository cloned in it. In the Neural-Style-Transfer folder, a new directory have been declared to save the results of the execution for each iteration.
+All the requirements have been installed in a virtual environment with the main repository cloned in it. In the Neural-Style-Transfer folder, a new directory have been declared to save the results of the execution for each iteration.
 
 ## Results generation
 
@@ -127,7 +127,7 @@ In order to evaluate more accurately the improvement of the image iteration afte
   <img width="500" height="450" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Results/improvement.PNG">
 </p>
 
-It is quite clear to see that in the first iterations the improvement value es very high. The  value depends on the input variables initialization but specially in the imaga size. The bigger the image is, the more iterations are needed to converge.
+It is quite clear to see that in the first iterations the improvement value is very high. The  value depends on the input variables initialization but specially in the imaga size. The bigger the image is, the more iterations are needed to converge.
 
 #### Time function: 
 
