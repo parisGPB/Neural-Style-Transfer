@@ -212,7 +212,7 @@ The loss function is calculated applying the structure previously defined and us
 ## Results
 All the results have been stored in the Results folder and explained in the RESULTS.md document located inside it.
 Find them here: 
-https://github.com/telecombcn-dl/2018-dlai-team5/Results
+![] https://github.com/telecombcn-dl/2018-dlai-team5/Results/Results.md
 
 ## Conclusions
 
