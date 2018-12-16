@@ -28,7 +28,7 @@ Our [notebook](https://telecombcn-dl.github.io/2018-dlai-team5/)
 - Study the different NST techniques: Improved, Fast & Arbitrary Fast Style Transfer
 
 ## What is Style Transfer?
-Neural style transfer is an optimization technique used to take three images, a content image, a style reference image (such as an artwork by a famous painter), and the input image you want to style — and blend them together such that the input image is transformed to look like the content image, but “painted” in the style of the style image.
+Neural style transfer is an optimization technique used to take three images, a content image, a style reference image (such as an artwork by a famous painter), and the input image you want to style (usually random image) — and blend them together such that the input image is transformed to look like the content image, but “painted” in the style of the style image.
 
 ## Types of style transfer studied
 - Basic Style Transfer
@@ -37,21 +37,21 @@ Neural style transfer is an optimization technique used to take three images, a 
 - Arbitrary Neural Style Transfer
 
 ## Basic Neural Style Transfer
-### CNN Structure
+### Structure
  ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/NN.png)
 In the image-wise NN, convolutional layers and maxpooling are typically used. Usually, pre-trained networks with large datasets --such as VGG16 & VGG19-- are used. These networks are useful since they have been trained to extract features of the input images.
 
-The first layers extract the most detailed features of the input image (pixel-level). The last layers contain the main features such as ears, mouth, etc. The deepest the layer is chosen, the more the style will be used from that input image. Alternatively, if the chosen layer is extracting low-level features, the content will be more important.
+The first layers extract the most detailed features of the input image (pixel-level). The last layers contain high level features, like ears, mouth, etc. Choose a low-leve layer, provide a generated image close to content image, because compare both in pixel value. When deep layer is chosen, high level features are use are keeped, but not force to keep pixel value. 
 
 To represent the content image, it is used a high layer. High layers in the network capture the high-level content in terms of objects and their arrangement in the input image but do not constrain the exact pixel values of the reconstruction. In contrast, reconstructions from the lower layers simply reproduce the exact pixel values of the original image.
 
-To represent the style image, which is defined as the artistic features such as textures, pattern, brightnes,etc., it is mandatory to employ a feature space originally designed to capture texture information. The first convolution layers of each block are used. Correlations between the different filter responses over the spatial extent of the feature maps are calculated. By including the feature correlations of multiple layers, it is obtained a stationary, multi-scale representation of the input image, which captures its texture information but not the global arrangement.
+To represent the style image, which is defined as the artistic features such as textures, pattern, brightnes,etc., it is mandatory to employ a feature space originally designed to capture texture information. As texture have different detail levels, this information is not located in just one layer. The first convolution layers of each block are used to achieve a representation in all detail levels. Correlations between the different filter responses over the spatial extent of the feature maps are calculated. By including the feature correlations of multiple layers, it is obtained a stationary, multi-scale representation of the input image, which captures its texture information but not the global arrangement.
 
 ### Loss functions
-The principle of neural style transfer is to define two distance functions, one that describes how different the content of two images are, Lcontent, and one that describes the difference between the two images in terms of their style, Lstyle. Then, given three images, a desired style image, a desired content image, and the input image (initialized with the content image or some noise), we try to transform the input image to minimize the content distance with the content image and its style distance with the style image.
+The principle of neural style transfer is to define two loss functions, one that describes how different the content of two images are, Lcontent, and one that describes the difference between the two images in terms of their style, Lstyle. Then, given three images, a desired style image, a desired content image, and the input image (initialized with the content image or some noise), we try to transform the input image to minimize the content distance with the content image and its style distance with the style image.
 In summary, we’ll take the base input image, a content image that we want to match, and the style image that we want to match. We’ll transform the base input image by minimizing the content and style distances (losses) via backpropagation, creating an image that mixes the content and the style of both images.
 
-In this case, the loss function will be formed by the content-image loss function --which represents how far is the generated image from the content one-- and the style-image loss function --which represents how well the style has been emulated--. Alpha and Beta are the weighting factors for content style reconstruction. (In the formula bewlo, beta is set to 1).
+In this case, the loss function will be formed by the content-image loss function --which represents how far is the generated image from the content one-- and the style-image loss function --which represents how well the style has been emulated--. Alpha and Beta are the weighting factors for content style reconstruction. The proportion between content weight and style weigh determine the result. Change the values but keep the proportion doesn't change the final result. For that reason, some times these weigh are representend with just one parameter (In the formula bewlo, beta is set to 1).
 <p align="center">
   <img width="460" src="https://cdn-images-1.medium.com/max/1600/1*Wd0L4_LA77g5cLWon7L3Hw.png">
   <img width="460" src="https://cdn-images-1.medium.com/max/1600/1*3LnRslYfEIqdLmVDP3PP3w.png">
