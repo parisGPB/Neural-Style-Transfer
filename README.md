@@ -49,6 +49,18 @@ In summary, we’ll take the base input image, a content image that we want to m
 
 In this case, the loss function will be formed by the content-image loss function --which represents how far is the generated image from the content one-- and the style-image loss function --which represents how well the style has been emulated--. Alpha and Beta are the weighting factors for content style reconstruction. (In the formula bewlo, beta is set to 1).
 
+<p align="center">
+  <img width="460" height="300" src="https://cdn-images-1.medium.com/max/1600/1*Wd0L4_LA77g5cLWon7L3Hw.png">
+</p>
+
+<p align="center">
+  <img width="460" height="300" src="https://cdn-images-1.medium.com/max/1600/1*3LnRslYfEIqdLmVDP3PP3w.png">
+</p>
+
+<p align="center">
+  <img width="460" height="300" src="https://cdn-images-1.medium.com/max/1600/1*F3yL2YQCQ3BH3cGWBRF9Hw.png">
+</p>
+
 ![](https://cdn-images-1.medium.com/max/1600/1*Wd0L4_LA77g5cLWon7L3Hw.png)
 
 ![](https://cdn-images-1.medium.com/max/1600/1*3LnRslYfEIqdLmVDP3PP3w.png)
