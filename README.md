@@ -2,6 +2,8 @@
 # STYLE TRANSFER - DLAI TEAM #5
 This project is carried out by ETSETB students for the Deep Learning for Artificial Intelligence course. 
 
+Our notebook: https://telecombcn-dl.github.io/2018-dlai-team5/
+
 ## Index:
 1. Goals
 2. What is Style Transfer?
