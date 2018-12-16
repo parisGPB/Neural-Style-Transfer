@@ -183,10 +183,12 @@ Training this new algorithm with a large number of style paintings, provide an a
 
 This model is based in 3 modules: Style prediction network, style transfer network and loss network. This model provides a generic representation for artistic styles that seems flexible enough to capture new artistic styles much faster than a single-purpose network.
 
-- Style transfer network 
+- Style transfer network
+
 Reduces each style image into a point in an embedding space employing a pretrained Inception-v3 architecture and compute the mean across of each activation channel of the Mixed-6e layer which returns a feature vector with the dimension of 768. Then apply two fully connected layers on top of it to predict the final embedding S.
 
 - Style prediction network
+
 Calculate the termed conditional instance normalization, which is based on applying a normalization with parameters that are specific for each style transfer. 
 ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula10.png)
 
@@ -198,6 +200,7 @@ Where
 The style prediction network is implemented using convolutional layers and residual blocks.
 
 - Loss network
+
 The loss function is calculated applying the structure previously defined and uses the VGG16 architecture. 
 
 ![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula9.png)
