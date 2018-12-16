@@ -98,10 +98,9 @@ This is a variation of the basic neural style transfer. The main improvements ar
 <p align="center">
   <img width="260" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula.png">
 </p>
+   Where D is the number of layers and d(l) is the deepness of the layer l with respect to the total number of gathered layers. 
 
-Where D is the number of layers and d(l) is the deepness of the layer l with respect to the total number of gathered layers. 
-
-Notice that the style weight decreases with the deepness of the layer whereas the content one increases. This make sense, since the high level features (which are useful for the content information) are gathered in the deeper layers. This improvement increases the quality of the output image.
+   Notice that the style weight decreases with the deepness of the layer whereas the content one increases. This make sense, since the high level features (which are useful for the content information) are gathered in the deeper layers. This improvement increases the quality of the output image.
 
 - **Using all 16 convolutional layers of VGG-19 for style inference**: Instead of using just some layers for the style feature extraction, the paper proposes to use all the convolutional layers of the VGG19.
           
@@ -109,12 +108,12 @@ Notice that the style weight decreases with the deepness of the layer whereas th
 In general, the outputs of the image are scarce: in all the layers, each filter has few activations different from the    spatial dimensions. This results in the scattering ot the Gram matrices, at the expense of the transfer quality of the style. Gram matrices contain a large number of zero entries, leaving too much freedom for the optimization procedure to interpret them incorrectly.
 This problem can be reduced by applying changed activations to eliminate dispersion.
 
-Original Gram Matrix:
+   Original Gram Matrix:
 <p align="center">
   <img width="200" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula1.png">
 </p>
 
-Gram Matrix with Shift activation:
+   Gram Matrix with Shift activation:
 <p align="center">
   <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula2.png">
 </p>     
@@ -130,6 +129,8 @@ Being µS and µC the mean luminance of the two images and σS and σC their sta
   <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula4.png">
 </p>
 There are others ways to implement Color Preservation in Style Transfer, but here it is explained the one it has been implemented.
+
+These improvements have been implemented in this [notebook](https://colab.research.google.com/drive/14rGJRCrlF8-Mhalebf4mfUK_zua1c6cn).
 
 ## Fast Neural Style Transfer
 
