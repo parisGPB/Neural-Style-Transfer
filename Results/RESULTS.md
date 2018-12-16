@@ -45,16 +45,15 @@ The Neural-Style-Transfer repository have a default configuration of values such
 
 | Parameter           | Default Value | Possible values                                                                                                                                      |
 |---------------------|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| num_iter            | 100           | 200                                                                                                                                                  |
-| content_weight      | 0.25          | 0.25 - 1 - 100 - 1                                                                                                                                   |
-| style_weight        | 1             | 1 - 0.25 - 1 - 100                                                                                                                                   |
-| tv_weight           | 8.5e-5        | 1e-4, 1e-5, 1e-8,  5e-8,1e-20                     |
-| region_style_weight | 1             | 1 -0.5 - 0.1- 0.05 - 0.01                                                                                                                            |
-| img_size            | 224 x 224     | 224x224- 112x112 - 448 x 448                                                                                                                         |
+| --num_iter            | 100           | 200                                                                                                                                                  |
+| --content_weight      | 0.25          | 0.25 - 1 - 100 - 1                                                                                                                                   |
+| --style_weight        | 1             | 1 - 0.25 - 1 - 100                                                                                                                                   |
+| --tv_weight           | 8.5e-5        | 1e-4, 1e-5, 1e-8,  5e-8,1e-20                     |
+| --img_size            | 224 x 224     | 224x224- 112x112 - 448 x 448                                                                                                                         |
 | --content_loss_type | 0             | 0 - 1 - 2                                                                                                                                            |
 | --content_layer     | conv5_2       | conv1_1 - conv1_2 - conv2_1 - conv2_2 - conv3_1 - conv3_2 - conv3_3  - conv4_1 - conv4_2 - conv4_3 - conv4_4 - conv5_1 - conv5_2 - conv5_3 - conv5_4 |
-| pool_type           | max           | max  - ave                                                                                                                                           |
-| init_image          | noise         | content - noise - gray       
+| --pool_type           | max           | max  - ave                                                                                                                                           |
+| --init_image          | noise         | content - noise - gray       
 
 
 All of this parameters, with the exeption of --content_layer, that has to be modified directly in the code, are set in the initial command when the execution is performed. To have a clear reference of how the Neural Style Transfer is working, 36 different experiments have been proposed. 
