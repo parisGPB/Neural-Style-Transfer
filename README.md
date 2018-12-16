@@ -212,7 +212,6 @@ All the results have been stored in the Results folder and explained in the RESU
 - Improved Style Transfer: https://arxiv.org/pdf/1605.04603.pdf
 - Color preservation: https://arxiv.org/pdf/1606.05897.pdf
 - Perceptual losses for Real-Time Style Transfer and Super-Resolution: https://cs.stanford.edu/people/jcjohns/papers/eccv16/JohnsonECCV16.pdf
-- Instance Normalization: The Missing Ingredient for Fast Stylization:
-https://cs.stanford.edu/people/jcjohns/papers/eccv16/JohnsonECCV16.pdf
 - Arbitrary Fast Style Transfer: https://arxiv.org/pdf/1705.06830.pdf , https://github.com/tensorflow/magenta/tree/master/magenta/models/arbitrary_image_stylization
+- A Neural Algorithm of Artistic Style: https://arxiv.org/pdf/1508.06576.pdf
 
