@@ -111,7 +111,7 @@ This problem can be reduced by applying changed activations to eliminate dispers
 
 Original Gram Matrix:
 <p align="center">
-  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula1.png">
+  <img width="300" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula1.png">
 </p>
 Gram Matrix with Shift activation:
 <p align="center">
@@ -148,7 +148,7 @@ The system consists of two components: the image transformation network and the 
 
 The image transformation network is a deep residual convolutional neural network. Each block have the follow structure:
 <p align="center">
-  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula6.png">
+  <img width="200" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula6.png">
 </p>
 This network comprises five residual blocks. The first and last layers use 9×9 kernels; all other convolutional layers use 3×3 kernels.
 
