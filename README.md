@@ -162,11 +162,13 @@ Instance Normalization: The Missing Ingredient for Fast Stylization
 Instance Normalization is used to replace batch normalization. While batch normalization applies the normalization to a whole batch of images, instance Normalization works for a single image separately. The objective is to replace every batch normalization in the generator network with the instance normalization in order to prevent instance-specific mean and covariance shift simplifying the learning process.
 
 Batch Normalization
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula7.png)
-
+<p align="center">
+  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula7.png">
+</p>
 Instance Normalization
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula8.png)
-
+<p align="center">
+  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula8.png">
+</p>
 Where: 
 T: batch size;
 W: image weight;
@@ -187,8 +189,9 @@ Reduces each style image into a point in an embedding space employing a pretrain
 - Style prediction network
 
 Calculate the termed conditional instance normalization, which is based on applying a normalization with parameters that are specific for each style transfer. 
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula10.png)
-
+<p align="center">
+  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula10.png">
+</p>
 Where 
      * mu is the mean
      * Sigma is the standard deviation
@@ -199,11 +202,9 @@ The style prediction network is implemented using convolutional layers and resid
 - Loss network
 
 The loss function is calculated applying the structure previously defined and uses the VGG16 architecture. 
-
-![](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula9.png)
-
-
-
+<p align="center">
+  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula9.png">
+</p>
 
 ## Results
 All the results have been stored in the Results folder and explained in the RESULTS.md document located inside it.
