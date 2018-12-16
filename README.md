@@ -202,7 +202,7 @@ The style prediction network is implemented using convolutional layers and resid
 
 The loss function is calculated applying the structure previously defined and uses the VGG16 architecture. 
 <p align="center">
-  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula9.png">
+  <img width="300" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula9.png">
 </p>
 
 ## Results
