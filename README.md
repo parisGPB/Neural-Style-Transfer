@@ -211,9 +211,9 @@ All the results have been stored in the Results folder and explained in the RESU
 Our [results](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Results/RESULTS.md)
 
 ## Conclusions
-The project is concluded as follows: ç
+The project is concluded as follows:
 
-The team has studied several Neural Style Transfer techniques. Each one has its main advantages and disadvantages:
+The team has studied several Neural Style Transfer techniques. Each one has its main advantages and disadvantages**:
 
 |                    | Quality (1-5) | Time (1-5) | Different Style Images |
 |--------------------|:-------------:|:----------:|:----------------------:|
@@ -222,7 +222,9 @@ The team has studied several Neural Style Transfer techniques. Each one has its 
 | Fast NST           |       3       |     5*     |           NO           |
 | Arbitrary Fast NST |       3       |     5*     |           YES          |
 
-Please, note that the previous table is built subjectively. 
+*After the Style Transformation Network has been trained.
+
+** Please, note that the previous table is built subjectively. 
 
 The main idea is that the Basic and Improved NST techniques yield to high-quality results after some iterations which try to jointly minimize both content and style loss. Between these two the main difference would be the quality (thanks to the improvements implemented) and the time per iteration (which is reduced in the improved version).
 
@@ -230,6 +232,11 @@ Regarding the Fast NST, both result in faster image style transformation by trai
 
 
 ## Further Steps
+If the team continued with the project, the main steps would be:
+
+1. Implement the Fast and Arbitrary Fast NST versions via Colab to gain insights of how the Style Transfer Network and the Style Prediction Network work jointly with the VGG19 in order to obtain instantaneous style transformations.
+2. Apply FNST and AFNST to real time video.
+3. Check the feasibility of data augmentation techniques by using NST.
 
 ## References
 - Basic Style Transfer & Improved Style Transfer: https://github.com/titu1994/Neural-Style-Transfer
