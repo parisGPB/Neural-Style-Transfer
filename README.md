@@ -94,24 +94,20 @@ The follow hyperparameters can be used to modify the output of the transfer styl
 
 This is a variation of the basic neural style transfer. The main improvements are:
 
-- Geometric Layer weight adjustment for Style inference
-
-Define the weight of style layers and content layer for each style layer.
+- **Geometric layer weight adjustment for style inference**: The separation between style and content is reduced by using the same layers for both of them (instead of just one for content and a bunch for style). Since the content/style information is gathered in different layers, the following geometric weighting is applied:
 <p align="center">
-  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula.png">
+  <img width="260" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula.png">
 </p>
 Where:
 D: is the number of layers.
 d(l): is the deeper of the layer l. 
-     
-- Using all layers of VGG-16 for style inference
 
-Increase the number of layers used to calculate the transfer style loss. 
-     
-- Activation Shift of gram matrix
-     
+Notice that the style weight decreases with the deepness of the layer whereas the content one increases. This make sense, since the high level features (which are useful for the content information) are gathered in the deeper layers. This improvement increases the quality of the output image.
+
+- **Using all 16 convolutional layers of VGG-19 for style inference**: Instead of using just some layers for the style feature extraction, the paper proposes to use all the convolutional layers of the VGG19.
+          
+- **Activation Shift of gram matrix**
 In general, the outputs of the image are scarce: in all the layers, each filter has few activations different from the    spatial dimensions. This results in the scattering ot the Gram matrices, at the expense of the transfer quality of the style. Gram matrices contain a large number of zero entries, leaving too much freedom for the optimization procedure to interpret them incorrectly.
-
 This problem can be reduced by applying changed activations to eliminate dispersion.
 Original Gram Matrix:
 <p align="center">
@@ -121,13 +117,12 @@ Gram Matrix with Shift activation:
 <p align="center">
   <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula2.png">
 </p>     
-- Correlation Chain
 
+- **Correlation Chain**
 Style information is captured by a set of Gram matrices calculated through correlations within the same layer. 
 The correlation chain consists of adding correlations between neighbor layers.
 
-- Color preservation
-
+- **Color preservation**
 Luminance channels (LS and LC) are first extracted from the style and content images to produce an output luminance image LT. This transformation is applied before running the Style Transfer algorithm.  Using the YIQ color space, the color information of the content image is represented via the I and Q channels; these are combined with LT to produce the final color output image. 
 Being µS and µC the mean luminance of the two images and σS and σC their standard deviations, each luminance pixel in the style image is updated as:
 <p align="center">
