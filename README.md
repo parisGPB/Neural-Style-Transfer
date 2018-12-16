@@ -98,9 +98,8 @@ This is a variation of the basic neural style transfer. The main improvements ar
 <p align="center">
   <img width="260" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula.png">
 </p>
-Where:
-D: is the number of layers.
-d(l): is the deeper of the layer l. 
+
+Where D is the number of layers and d(l) is the deepness of the layer l with respect to the total number of gathered layers. 
 
 Notice that the style weight decreases with the deepness of the layer whereas the content one increases. This make sense, since the high level features (which are useful for the content information) are gathered in the deeper layers. This improvement increases the quality of the output image.
 
@@ -109,10 +108,12 @@ Notice that the style weight decreases with the deepness of the layer whereas th
 - **Activation Shift of gram matrix**
 In general, the outputs of the image are scarce: in all the layers, each filter has few activations different from the    spatial dimensions. This results in the scattering ot the Gram matrices, at the expense of the transfer quality of the style. Gram matrices contain a large number of zero entries, leaving too much freedom for the optimization procedure to interpret them incorrectly.
 This problem can be reduced by applying changed activations to eliminate dispersion.
+
 Original Gram Matrix:
 <p align="center">
   <img width="200" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula1.png">
 </p>
+
 Gram Matrix with Shift activation:
 <p align="center">
   <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula2.png">
@@ -210,6 +211,23 @@ All the results have been stored in the Results folder and explained in the RESU
 Our [results](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Results/RESULTS.md)
 
 ## Conclusions
+The project is concluded as follows: ç
+
+The team has studied several Neural Style Transfer techniques. Each one has its main advantages and disadvantages:
+
+|                    | Quality (1-5) | Time (1-5) | Different Style Images |
+|--------------------|:-------------:|:----------:|:----------------------:|
+| Basic NST          |       4       |      2     |           YES          |
+| Improved NST       |       5       |      3     |           YES          |
+| Fast NST           |       3       |     5*     |           NO           |
+| Arbitrary Fast NST |       3       |     5*     |           YES          |
+
+Please, note that the previous table is built subjectively. 
+
+The main idea is that the Basic and Improved NST techniques yield to high-quality results after some iterations which try to jointly minimize both content and style loss. Between these two the main difference would be the quality (thanks to the improvements implemented) and the time per iteration (which is reduced in the improved version).
+
+Regarding the Fast NST, both result in faster image style transformation by training a previous network with a given style. After the network (Style Transformation Network) is trained, the style can be applied instantaniously to any content image. In the case of the Arbitrary, another network (Style Prediction Network) is trained in order to extract the main parameters via the conditional instance normalization.
+
 
 ## Further Steps
 
