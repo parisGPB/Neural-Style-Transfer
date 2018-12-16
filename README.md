@@ -228,7 +228,7 @@ The team has studied several Neural Style Transfer techniques. Each one has its 
 
 The main idea is that the Basic and Improved NST techniques yield to high-quality results after some iterations which try to jointly minimize both content and style loss. Between these two the main difference would be the quality (thanks to the improvements implemented) and the time per iteration (which is reduced in the improved version).
 
-Regarding the Fast NST, both result in faster image style transformation by training a previous network with a given style. After the network (Style Transformation Network) is trained, the style can be applied instantaniously to any content image. In the case of the Arbitrary, another network (Style Prediction Network) is trained in order to extract the main parameters via the conditional instance normalization.
+Regarding the Fast NST, both result in faster image style transformation by training a previous network with a given style. After the network (Style Transformation Network or STN) is trained, the style can be applied instantaniously to any content image. In the case of the Arbitrary, another network (Style Prediction Network) is trained in order to extract the main parameters via the conditional instance normalization, which are then passed to the STN in order to apply any given style to any given content instantaneously.
 
 
 ## Further Steps
