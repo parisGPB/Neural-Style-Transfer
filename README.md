@@ -50,11 +50,11 @@ By means of convolutions, the first layers extract the lowest level features (pi
 
 To represent the **content image**, a deep layer is used. Deeper (or last) layers in the network capture the high-level content in terms of objects and their arrangement in the input image but do not constrain the exact pixel values of the reconstruction. In contrast, reconstructions from the lower layers simply reproduce the exact pixel values of the original image.
 
-To represent the **style image**, which is defined as the artistic features such as textures, pattern, brightnes,etc., it is mandatory to employ a feature space originally designed to capture texture information. As texture have different detail levels, this information is not located in just one layer. Therefore, the first convolutional layer of each block are used to achieve a representation in all detail levels. Correlations between the different filter responses over the spatial extent of the feature maps are calculated. By including the feature correlations of multiple layers, it is obtained a stationary, multi-scale representation of the input image, which captures its texture information but not the global arrangement.
+To represent the **style image**, which is defined as the artistic features such as textures, pattern, brightness,etc., it is mandatory to employ a feature space originally designed to capture texture information. As texture have different detail levels, this information is not located in just one layer. Therefore, the first convolutional layer of each block are used to achieve a representation in all detail levels. Correlations between the different filter responses over the spatial extent of the feature maps are calculated. By including the feature correlations of multiple layers, it is obtained a stationary, multi-scale representation of the input image, which captures its texture information but not the global arrangement.
 
 ### Loss Functions
 The principle of neural style transfer is to define two loss functions, one that describes how different the content of two images are, Lcontent, and one that describes the difference between the two images in terms of their style, Lstyle. Then, given three images, a desired style image, a desired content image, and the input image (initialized with the content image or some noise), we try to transform the input image to joinly minimize the content distance with the content image and the style distance with the style image.
-In summary, we’ll take the base input image, a content image that we want to match, and the style image that we want to match. We’ll transform the base input image by minimizing the content and style distances (losses) via backpropagation, creating an image that mixes the content and the style of both images.
+In summary, we’ll take the base input image, a content image that we want to match and the style image that we want to match. We’ll transform the base input image by minimizing the content and style distances (losses) via backpropagation, creating an image that mixes the content and the style of both images.
 
 Notice the parameters Alpha and Beta, which are the weighting factors for content style reconstruction. It will be the proportion between content and style weights what will determine if the result prioritizes the content or the style. Also notice that what really matters is the proportion between them, that is why in some equations we find just one parameter (in those cases we assume Beta = 1).
 <p align="center">
@@ -68,7 +68,7 @@ The layers used in this Basic NST implementation for Style Loss Function are: co
 ### Gram Matrix
 The Gram Matrix is used to compare both the style image and the output one, layer by layer. The **style representation of an image** is described as the correlation of the different convolutional filter responses given by the Gram matrix.
 
-For example, given the first layer of the network, a CxHxW vector space is obtained, where C is the number of filters, H is the height of the image and W the width. From these parameters, we compute the Gram Matrix by computing the dot product between different rows, in order to see which features tend to occur at the same time -i.e. which neurons tend are activated simultaneously.
+For example, given the first layer of the network, a CxHxW vector space is obtained, where C is the number of filters, H is the height of the image and W the width. From these parameters, we compute the Gram Matrix by computing the dot product between different rows, in order to see which features tend to occur at the same time -i.e. which neurons are activated simultaneously.
 
 <p align="center">
   <img width="100" src="Utils/formula1.png">
@@ -109,8 +109,7 @@ Where D is the number of layers and d(l) is the deepness of the layer l with res
 - **Using all 16 convolutional layers of VGG-19 for style inference**: Instead of using just some layers for the style feature extraction, the paper proposes to use all the convolutional layers of the VGG19.
           
 - **Activation Shift of gram matrix**
-In general, the outputs of the image are scarce: in all the layers, each filter has few activations different from the    spatial dimensions. This results in the scattering ot the Gram matrices, at the expense of the transfer quality of the style. Gram matrices contain a large number of zero entries, leaving too much freedom for the optimization procedure to interpret them incorrectly.
-This problem can be reduced by applying changed activations to eliminate dispersion.
+In general, the outputs of the image are scarce: in all the layers, each filter has few activations different from the    spatial dimensions. This results in the scattering of the Gram matrices, at the expense of the transfer quality of the style. Gram matrices contain a large number of zero entries, leaving too much freedom for the optimization procedure to interpret them incorrectly. This problem can be reduced by applying changed activations to eliminate dispersion.
 
 | Original Gram Matrix | Gram Matrix with Shift activation |
 |:--------------------:|:---------------------------------:|
@@ -201,7 +200,7 @@ The loss function is calculated applying the structure previously defined and us
 </p>
 
 ## Results
-All the results have been stored in the Results folder and explained in the [RESULTS.md](Results/RESULTS.md) document located inside it.
+All the results have been stored in the Results folder and explained in the [RESULTS.md](Results/RESULTS.md) document, located inside it.
 
 ## Conclusions
 The project is concluded as follows:
@@ -219,9 +218,9 @@ The team has studied several Neural Style Transfer techniques. Each one has its 
 
 ** Please, note that the previous table is built subjectively. 
 
-The main idea is that the Basic and Improved NST techniques yield to high-quality results after some iterations which try to jointly minimize both content and style loss. Between these two the main difference would be the quality (thanks to the improvements implemented) and the time per iteration (which is reduced in the improved version).
+The main idea is that the Basic and Improved NST techniques yield to high-quality results after some iterations which try to jointly minimize both content and style loss. Between these two, the main difference would be the quality (thanks to the improvements implemented) and the time per iteration (which is reduced in the improved version).
 
-Regarding the Fast NST, both result in faster image style transformation by training a previous network with a given style. After the network (Style Transformation Network or STN) is trained, the style can be applied instantaniously to any content image. In the case of the Arbitrary, another network (Style Prediction Network) is trained in order to extract the main parameters via the conditional instance normalization, which are then passed to the STN in order to apply any given style to any given content instantaneously.
+Regarding the Fast NST, both result in a faster style image transformation by training a previous network with a given style. After the network (Style Transformation Network or STN) is trained, the style can be applied instantaniously to any content image. In the case of the Arbitrary, another network (Style Prediction Network) is trained in order to extract the main parameters via the conditional instance normalization, which are then passed to the STN in order to apply any given style to any given content instantaneously.
 
 This project has helped us learn the intrinsics of Neural Style Transfer and the state-of-the-art techniques in the field. Some of us started the project with little or almost none experience with Deep Learning and the Colab implementations -learning from the very lowest level- plus the cloud platform management -useful when dealing with complex Deep Learning problems- and the research performed, have helped us gain experience in this area. 
 
