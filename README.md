@@ -64,7 +64,7 @@ The Gram Matrix is used to compare both the style image and the output one.
 The style representation of an image is described as the correlation of the different filter responses given by the Gram matrix.
 Given the first layer of the trained network a CxHxW vector space is obtained, where C is the number of filters, H is the height of the image and W the width. From these parameters, we compute the Gram Matrix. To obtain it, different rows are chosen and their inner product is computed in order to see which neurons tend to be activated at the same time.
 <p align="center">
-  <img width="200" src="Utils/formula1.png">
+  <img width="100" src="Utils/formula1.png">
 </p>
 "where Gˡ is the inner product between the both vectorized feature maps in layer l. We can see that Gˡ, generated over the feature map for a given image represents the correlation between feature maps i and j."
 
@@ -96,7 +96,7 @@ This is a variation of the basic neural style transfer. The main improvements ar
 
 - **Geometric layer weight adjustment for style inference**: The separation between style and content is reduced by using the same layers for both of them (instead of just one for content and a bunch for style). Since the content/style information is gathered in different layers, the following geometric weighting is applied:
 <p align="center">
-  <img width="260" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula.png">
+  <img width="260" src="Utils/formula.png">
 </p>
    Where D is the number of layers and d(l) is the deepness of the layer l with respect to the total number of gathered layers. 
 
@@ -110,12 +110,12 @@ This problem can be reduced by applying changed activations to eliminate dispers
 
    Original Gram Matrix:
 <p align="center">
-  <img width="200" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula1.png">
+  <img width="200" src="Utils/formula1.png">
 </p>
 
    Gram Matrix with Shift activation:
 <p align="center">
-  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula2.png">
+  <img width="460" src="Utils/formula2.png">
 </p>     
 
 - **Correlation Chain**
@@ -126,7 +126,7 @@ The correlation chain consists of adding correlations between neighbor layers.
 Luminance channels (LS and LC) are first extracted from the style and content images to produce an output luminance image LT. This transformation is applied before running the Style Transfer algorithm.  Using the YIQ color space, the color information of the content image is represented via the I and Q channels; these are combined with LT to produce the final color output image. 
 Being µS and µC the mean luminance of the two images and σS and σC their standard deviations, each luminance pixel in the style image is updated as:
 <p align="center">
-  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula4.png">
+  <img width="460" src="Utils/formula4.png">
 </p>
 There are others ways to implement Color Preservation in Style Transfer, but here it is explained the one it has been implemented.
 
@@ -143,13 +143,13 @@ Feed-forward networks are trained to solve the optimization problem.
 Results are similar to both in terms of quality (and objective measurement) but ~1000x times faster to generate. However, it is lost the flexibility of the original Style Transfer that can combine two arbitrary images. This network allows to apply only one style transformation per architecture. 
 The system consists of two components: the image transformation network and the loss network.
 <p align="center">
-  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula5.png">
+  <img width="460" src="Utils/formula5.png">
 </p>
 1. Image transformation network
 
 The image transformation network is a deep residual convolutional neural network. Each block have the follow structure:
 <p align="center">
-  <img width="100" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula6.png">
+  <img width="100" src="Utils/formula6.png">
 </p>
 This network comprises five residual blocks. The first and last layers use 9×9 kernels; all other convolutional layers use 3×3 kernels.
 
@@ -164,11 +164,11 @@ Instance Normalization is used to replace batch normalization. While batch norma
 
 Batch Normalization
 <p align="center">
-  <img width="560" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula7.png">
+  <img width="560" src="Utils/formula7.png">
 </p>
 Instance Normalization
 <p align="center">
-  <img width="560" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula8.png">
+  <img width="560" src="Utils/formula8.png">
 </p>
 Where: 
 T: batch size;
@@ -190,7 +190,7 @@ Reduces each style image into a point in an embedding space employing a pretrain
 - Style prediction network
 
 Calculate the termed conditional instance normalization, which is based on applying a normalization with parameters that are specific for each style transfer. <p align="center">
-  <img width="300" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula10.png">
+  <img width="300" src="Utils/formula10.png">
 </p>
 Where 
      * mu is the mean
@@ -203,7 +203,7 @@ The style prediction network is implemented using convolutional layers and resid
 
 The loss function is calculated applying the structure previously defined and uses the VGG16 architecture. 
 <p align="center">
-  <img width="460" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/formula9.png">
+  <img width="460" src="Utils/formula9.png">
 </p>
 
 ## Results
