@@ -161,7 +161,7 @@ In that case, the influence of style image is reduced at minimum. Original color
 
     (Figure 4) Content weigh =1 and Style weight =100 
  
-Influence of style image is total. Still keeping some remainder from the  leaves and the grill textures, but the grass have been disappear. Elements from the Style image are included without coherence with the content. Is easy to se how in the middle of the image appears an structure similar to the building of image style. Original colors have been totally lost.
+Influence of style image is total. Still keeping some remainder from the leaves and the grill textures, but the grass has disapeared. Elements from the Style image are included without coherence with the content. It is easy to se how appear in the middle of the image an structure similar to the building of image style. Original colors have been totally lost.
 
 
 ### Total variation weight:
@@ -176,11 +176,11 @@ Influence of style image is total. Still keeping some remainder from the  leaves
   <img width="600" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/56789.png">
 </p>
    
-Total Variation Weight try to avoid blurred effect in image. Values closest to 0 increased this effect. Also affects in the color of the image. Values far from 0 on this parameter prevent the appearance of style image colors and values close to 0 helps to expand it. 
+Total Variation Weight try to avoid blurred effect in image. Values closest to 0 increased this effect, so the final result has more quality but the execution time is higher. This value also affects in the color of the image. Values far from 0 on this parameter prevent the appearance of style image colors and values close to 0 helps to expand it. 
    
 ### Style Layers:
 
-Probably this hyper parameter is one of the most interesting and difficult to text (for the high number of combinations). So, in order to analyze it in a reliable way, some configuration have been tested. The weight of each layer is configurated according to the number of layers, so the weight of style layers re. 
+Probably this hyper parameter is one of the most interesting and difficult to text (for the high number of combinations). So, in order to analyze it in a reliable way, some of the most interesting configurations have been tested. The weight of each layer is configurated according to the number of layers, so the weight of style layers re. 
 
 
     (Figure 10)  ['conv1_1', 'conv2_1', 'conv3_1', 'conv4_1','conv5_1'] (original values)
@@ -193,7 +193,7 @@ Probably this hyper parameter is one of the most interesting and difficult to te
   <img width="600" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/1011121314.png">
 </p>
    
-As we can see in the previous results, deleting style layers starting from the deeper ones to the higher ones we can see how eventually the output image looks more similar to content image. Starting with little changes in the color. The changes in the texture are little differents in each image, loosing detail and beeing more general. The last image, where only conv1_1 is maintained, image shows changes mostly in color, but keep the original texture as well. The reason is that the first layers in the network are based in evaluate pixels, so the high level features characteristics from the structure of style image is loosed.
+As we can see in the previous results, deleting style layers starting from the deeper ones to the higher ones we can see how eventually the output image looks more similar to content image, starting with little changes in the color. The changes in the texture are little different in each image, loosing detail and beeing more general. The last image, where only conv1_1 is maintained, shows how the main changes made reside in colours, but keeping the original texture as well. The reason is that the first layers in the network are based in evaluating the pixels, so the high level features characteristics from the structure of style image are lost.
 
 Comparing those two image above, it is easy to see how the foreleg and the snout are lees defined in Figure eight figure than in the left one, where conv5_1 can provide more high level details. 
 
@@ -211,17 +211,17 @@ Comparing those two image above, it is easy to see how the foreleg and the snout
   <img width="500" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/15161718.png">
 </p>
 
-Without conf3_1, transfer style keep the color from the content image, texture is only different from the original for blurred effect. Looks like 'conv1_1','conv2_1' and 'conv3_1' have more influence in color than 'conv4_1' and 'conv5_1'. That have sense because are more closest to pixel value. Our intuition is that 'conv4_1' and 'conv5_1' are more focused in details, providing more defined textures in concrete elements of the image .Without a base on represent high level details, conv4_1 and conv5_1 are useless. 
+Without conf3_1, transfer style keep the color from the content image, texture is only different from the original for blurred effect. Looks like 'conv1_1','conv2_1' and 'conv3_1' have more influence in color than 'conv4_1' and 'conv5_1'. That makes sense because are more closest to pixel value. Our intuition is that 'conv4_1' and 'conv5_1' are more focused in details, providing more defined textures in concrete elements of the image. Without a base to represent high level details, conv4_1 and conv5_1 are useless. 
 
-The nexts tests are over groups of layers, selected to combine high level and down level features.
+The next tests are related to groups of layers, selected to combine high level and down level features.
 
     (Figure 19)  ['conv5_1']
 
-This example shows that keep intermedial layers improve the realistic effect of the artistic style. Some effects are no coherent with the context of the image, merging the dog with the floor.
+This example shows that keeping intermedial layers improve the realistic effect of the artistic style, providing better final results. Some effects are no coherent with the context of the image, merging the dog with the floor.
 
     (Figure 20)  ['conv1_1', 'conv5_1']
     
-The effect of the layers from the extremes doesn’t change textures, only color and is quite similar to Figure 14, where only conv1_1 is used. Furthermore, in the following result we can see the high of detail in features. It is visually abrupted. In Figure 22 we can see how the texture applied is low level. Poorly detailed and has no coherence with the elements of the image 
+The effect of the layers from the extremes doesn’t change textures, only color and is quite similar to Figure 14, where only conv1_1 is used. Furthermore, in the following result we can see the high of detail in features. We can state that the final result is visually abrupted. In Figure 22 we can see how the texture applied is low level. Poorly detailed and has no coherence with the elements of the image 
 
     (Figure 21)  ['conv1_1', 'conv5_1']
     (Figure 22)  ['conv1_1', 'conv5_1']
@@ -245,17 +245,17 @@ Content layer affects on how measure content style in the final result. High lev
 
 Using Conv1_2, Conv2_2 and Conv3_2 as content layers, the most part of the original pixel values is maintained. The lower level the layer is, the bigger the similarity with content image we can see. Using this measures for content image is too restrictive to see a clear style transfer effect. 
 
-Conv5_2 layer loose drastically the result so it is imposible to recognise content image. This happens probably because the references are taken from a values to far from the original pixels. Changing the content and style weights is possible to reduce this effect. 
+Conv5_2 layer loose drastically the result so it is imposible to recognise content image. This happens probably because the references are taken from a values to far from the original pixels. By changing the content and style weights is possible to reduce this effect. 
 
 ### Image Size:
 
-Image size has a direct impact in the final results, especially when the size of the input content is reduced. VGG16 and VGG19 originally are prepared to work with 224 x 244 x 3 images. So, optimized results are for this size of image. 
+Image size has a direct impact in the final results, especially when the size of the input content is reduced. VGG16 and VGG19 originally are prepared to work with 224 x 244 x 3 images, but this can be modified through the input variables. So, optimized results are for this size of image. 
 
     (Figure 29)  Image size = 224 x 224 (original configuration)
     (Figure 30)  Image size = 112 x 112 
     (Figure 31)  Image size = 448 x 448
 
-Increasing the size of the image taking into account the reference of 224 the final result look quite similar, but more high defined. If we reduce the size, the resulting image have more noise effects, is difficult to recognise content and colors and texture are included without sence from the original content. 
+Increasing the size of the image taking into account the reference of 224 the final result look quite similar, but more high defined due to the information provided. If we reduce the size, the resulting image have more noise effects, is difficult to recognise content and colors and texture are included without sence from the original content. The execution time is higher if the image size is increased. 
 
 ### Initialization:
 
@@ -263,5 +263,7 @@ Usually, style transfer start drawing from random image, but can also work over 
 
     (Figure 29)  Initialization = Gray
     (Figure 30)  Initialization = Content
-    
+
+The rest of the results can be checked in the directory. Each experiment has the first 10 images of all iterations and multiples of 10 to the end. In each experiment, loss, time and execution improvement functions can be check as well as the .txt file that contains all the simulation parameters. 
+
 Our [Google Doc images](https://docs.google.com/document/d/1aKH6Gn1-q3Uh38uj0VJ1gHty0znnJ-eQxN1pytQL_uU/edit#)
