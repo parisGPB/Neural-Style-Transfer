@@ -87,7 +87,7 @@ To execute the different tests, two images have been selected as default.
 - Content:
 
 <p align="center">
-  <img width="500" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/Perrete.png">
+  <img width="500" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Results/Perrete.png">
 </p>
 
 This content image selected for the different textures (grass, leaves,fur,grille), objects( dog, floor, hose, background) and colors in the image. 
@@ -95,7 +95,7 @@ This content image selected for the different textures (grass, leaves,fur,grille
 - Style:
 
 <p align="center">
-  <img width="500" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Utils/VanGogh.png">
+  <img width="500" height="400" src="https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Results/VanGogh.png">
 </p>
 
 This image was selected because is one of the most typical in datasets of transfer stlyle. The image has a very particular texture and colors, and some elements (like the building and the moon) that are quite characteristic. 
