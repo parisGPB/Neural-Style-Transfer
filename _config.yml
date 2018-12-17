@@ -1,4 +1,5 @@
 theme: jekyll-theme-minimal
 title: Neural Style Transfer
 logo: Utils/it_10.png
+description: NST project carried out by ETSETB students, research and discussion of the state-of-the-art NST techniques.
 
