@@ -104,8 +104,7 @@ This is a variation of the basic neural style transfer. The main improvements ar
 <p align="center">
   <img width="260" src="Utils/formula.png">
 </p>
-<p>
-     Where D is the number of layers and d(l) is the deepness of the layer l with respect to the total number of gathered layers. Notice that the style weight decreases with the deepness of the layer whereas the content one increases. This make sense, since the high level features (which are useful for the content information) are gathered in the deeper layers. This improvement increases the quality of the output image.</p>
+Where D is the number of layers and d(l) is the deepness of the layer l with respect to the total number of gathered layers. Notice that the style weight decreases with the deepness of the layer whereas the content one increases. This make sense, since the high level features (which are useful for the content information) are gathered in the deeper layers. This improvement increases the quality of the output image.
 
 - **Using all 16 convolutional layers of VGG-19 for style inference**: Instead of using just some layers for the style feature extraction, the paper proposes to use all the convolutional layers of the VGG19.
           
@@ -132,33 +131,28 @@ There are others ways to implement Color Preservation in Style Transfer, but her
 These improvements have been implemented in this [notebook](https://colab.research.google.com/drive/14rGJRCrlF8-Mhalebf4mfUK_zua1c6cn).
 
 ## Fast Neural Style Transfer
+This technique aims to reduce drastically the time needed to perform the styled results by the original NST algorithm. 
 
-To reduce the time needed from the original transfer style.
+The technique consists on creating a feed-forward neural network, called Image Transform Network, which will be fed with the content image. This network will be trained to joinly minimize the content and style loss functions from the already-known VGG16, learning how to transform the input content image to the styled output of the VGG16.
 
-- Perceptual Losses for Real-Time Style Transfer and Super-Resolution:
+Not only both techniques (fast and original) are similar in terms of quality, but also FNST is ~1000x times faster. However, the Image Transform Network has to be trained for each style image, limiting this technique by losing the flexibility to combine two arbitrary images.
 
-Feed-forward networks are trained to solve the optimization problem. 
-
-Results are similar to both in terms of quality (and objective measurement) but ~1000x times faster to generate. However, it is lost the flexibility of the original Style Transfer that can combine two arbitrary images. This network allows to apply only one style transformation per architecture. 
-The system consists of two components: the image transformation network and the loss network.
+The network consists on (1) the Image Transformation Network and (2) the Loss Network.
 <p align="center">
   <img width="460" src="Utils/formula5.png">
 </p>
-1. Image transformation network
 
-The image transformation network is a deep residual convolutional neural network. Each block have the follow structure:
+**1. Image transformation network**
+The image transformation network is a deep residual CNN. Each block have the following structure:
 <p align="center">
   <img width="100" src="Utils/formula6.png">
 </p>
-This network comprises five residual blocks. The first and last layers use 9×9 kernels; all other convolutional layers use 3×3 kernels.
+This network comprises five residual blocks. The first and last layers use 9×9 kernels; all the other convolutional layers use 3×3 kernels.
 
-2. Loss network
+**2. Loss network**
+Loss function computes a scalar value measuring the difference between the output image and a target image. The Image Transformation Network is trained using stochastic gradient descent to minimize a weighted combination of both already-known loss functions (style and content).
 
-Loss function computes a scalar value measuring the difference between the output image and a target image. The image transformation network is trained using stochastic gradient descent to minimize a weighted combination of loss functions:
-Loss function is calculated in the same way than the loss in original Transfer Style.
-
-Instance Normalization: The Missing Ingredient for Fast Stylization
-
+# ?AIXO VA ABAIX?
 Instance Normalization is used to replace batch normalization. While batch normalization applies the normalization to a whole batch of images, instance Normalization works for a single image separately. The objective is to replace every batch normalization in the generator network with the instance normalization in order to prevent instance-specific mean and covariance shift simplifying the learning process.
 
 Batch Normalization
@@ -174,30 +168,28 @@ T: batch size;
 W: image weight;
 H: image height
 
-## Arbitrary Neural Style Transfer
+## Arbitrary Fast Neural Style Transfer
+This technique aims to tackle the previous FNST problem: the style-per-style training, which forces the Image Transformation Network to be trained for each different style image. This solution combines the flexibility of the basic NST and the speed of the Fast NST.
 
-This solution combine the flexibility of the basic Neural Style Transfer and the speed of the Fast Transfer Style.
+Also, after training this network with a large number of style paintings, the algorithm is capable of synthetizing new styles never previously observed. 
 
-Training this new algorithm with a large number of style paintings, provide an algorithm capable to understand new styles never previously observed. 
-
-This model is based in 3 modules: Style prediction network, style transfer network and loss network. This model provides a generic representation for artistic styles that seems flexible enough to capture new artistic styles much faster than a single-purpose network.
+The structure is based on 3 modules: (1) The Style Prediction Network, (2) the Style Transfer Network and (3) the Loss Network. This model provides a generic representation for artistic styles flexible enough to capture new artistic styles much faster than a single-purpose network.
 
 - **Style transfer network**
 
-Reduces each style image into a point in an embedding space employing a pretrained Inception-v3 architecture and compute the mean across of each activation channel of the Mixed-6e layer which returns a feature vector with the dimension of 768. Then apply two fully connected layers on top of it to predict the final embedding S.
+This first component is the already explained Style Transformation Network of the previous section. In this case, however, the CNN must be formulated structured as an encoder/decoder, which will help embedding the information of the image in a few units. 
+
+The study argues that the mean and variance of those few activations (smaller in terms of dimensions than the original image) is unique for each style image. Therefore, the goal is to predict these two parameters for any given style image.
 
 - **Style prediction network**
 
-Calculate the termed conditional instance normalization, which is based on applying a normalization with parameters that are specific for each style transfer. 
+This network tries to predict the aforementioned parameters. It is trained to compute the conditional instance normalization, which is based on applying a normalization with parameters that are specific for each style transfer. 
 
 <p align="center">
   <img width="100" src="Utils/formula10.png">
 </p>
 
-Where 
-     * mu is the mean
-     * Sigma is the standard deviation
-     * Beta and gamma are learned by the neural network. Beta is the learned mean and gamma is the learned standard deviation
+Where 'mu' is the mean, 'sigma' is the standard deviation and 'beta' and 'gamma' are learned by the neural network. Beta is the learned mean and gamma is the learned standard deviation of the unit.
 
 The style prediction network is implemented using convolutional layers and residual blocks.
 
@@ -209,9 +201,7 @@ The loss function is calculated applying the structure previously defined and us
 </p>
 
 ## Results
-All the results have been stored in the Results folder and explained in the RESULTS.md document located inside it.
-
-Our [results](https://github.com/telecombcn-dl/2018-dlai-team5/blob/master/Results/RESULTS.md)
+All the results have been stored in the Results folder and explained in the [RESULTS.md](Results/RESULTS.md) document located inside it.
 
 ## Conclusions
 The project is concluded as follows:
