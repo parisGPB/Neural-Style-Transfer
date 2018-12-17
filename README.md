@@ -223,6 +223,8 @@ The main idea is that the Basic and Improved NST techniques yield to high-qualit
 
 Regarding the Fast NST, both result in faster image style transformation by training a previous network with a given style. After the network (Style Transformation Network or STN) is trained, the style can be applied instantaniously to any content image. In the case of the Arbitrary, another network (Style Prediction Network) is trained in order to extract the main parameters via the conditional instance normalization, which are then passed to the STN in order to apply any given style to any given content instantaneously.
 
+This project has helped us learn the intrinsics of Neural Style Transfer and the state-of-the-art techniques in the field. Some of us started the project with little or almost none experience with Deep Learning and the Colab implementations -learning from the very lowest level- plus the cloud platform management -useful when dealing with complex Deep Learning problems- and the research performed, have helped us gain experience in this area. 
+
 
 ## Further Steps
 If the team continued with the project, the main steps would be:
