@@ -108,14 +108,15 @@ This is a variation of the basic neural style transfer. The main improvements ar
 In general, the outputs of the image are scarce: in all the layers, each filter has few activations different from the    spatial dimensions. This results in the scattering ot the Gram matrices, at the expense of the transfer quality of the style. Gram matrices contain a large number of zero entries, leaving too much freedom for the optimization procedure to interpret them incorrectly.
 This problem can be reduced by applying changed activations to eliminate dispersion.
 
-   Original Gram Matrix:
+    Original Gram Matrix:
 <p align="center">
-  <img width="200" src="Utils/formula1.png">
+  <img width="100" src="Utils/formula1.png">
 </p>
 
-   Gram Matrix with Shift activation:
+   
+    Gram Matrix with Shift activation:
 <p align="center">
-  <img width="460" src="Utils/formula2.png">
+  <img width="200" src="Utils/formula2.png">
 </p>     
 
 - **Correlation Chain**
@@ -126,7 +127,7 @@ The correlation chain consists of adding correlations between neighbor layers.
 Luminance channels (LS and LC) are first extracted from the style and content images to produce an output luminance image LT. This transformation is applied before running the Style Transfer algorithm.  Using the YIQ color space, the color information of the content image is represented via the I and Q channels; these are combined with LT to produce the final color output image. 
 Being µS and µC the mean luminance of the two images and σS and σC their standard deviations, each luminance pixel in the style image is updated as:
 <p align="center">
-  <img width="460" src="Utils/formula4.png">
+  <img width="200" src="Utils/formula4.png">
 </p>
 There are others ways to implement Color Preservation in Style Transfer, but here it is explained the one it has been implemented.
 
@@ -192,7 +193,7 @@ Reduces each style image into a point in an embedding space employing a pretrain
 Calculate the termed conditional instance normalization, which is based on applying a normalization with parameters that are specific for each style transfer. 
 
 <p align="center">
-  <img width="300" src="Utils/formula10.png">
+  <img width="100" src="Utils/formula10.png">
 </p>
 
 Where 
