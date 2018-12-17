@@ -40,40 +40,44 @@ Neural style transfer is an optimization technique used to blend an input image 
 - Arbitrary Neural Style Transfer
 
 ## Basic Neural Style Transfer
-### Structure
+
+### Structure and Feature Extraction
+When working with image-wise neural networks, convolutional layers and maxpooling are tipycally used. Also, since they may be costly to train, pre-trained networks (such as VGG16 & VGG19) are useful because they already have been trained to extract features of the input images.
+
 ![](Utils/NN.png)
-In the image-wise NN, convolutional layers and maxpooling are typically used. Usually, pre-trained networks with large datasets --such as VGG16 & VGG19-- are used. These networks are useful since they have been trained to extract features of the input images.
 
-The first layers extract the most detailed features of the input image (pixel-level). The last layers contain high level features, like ears, mouth, etc. Choose a low-leve layer, provide a generated image close to content image, because compare both in pixel value. When deep layer is chosen, high level features are use are keeped, but not force to keep pixel value. 
+By means of convolutions, the first layers extract the lowest level features (pixel-level). The deeper the layer, the higher the level of the feature extracted. For example, in the last layers it can be seen how the network extracts features such as ears, mouths, etc. 
 
-To represent the content image, it is used a high layer. High layers in the network capture the high-level content in terms of objects and their arrangement in the input image but do not constrain the exact pixel values of the reconstruction. In contrast, reconstructions from the lower layers simply reproduce the exact pixel values of the original image.
+To represent the **content image**, a deep layer is used. Deeper (or last) layers in the network capture the high-level content in terms of objects and their arrangement in the input image but do not constrain the exact pixel values of the reconstruction. In contrast, reconstructions from the lower layers simply reproduce the exact pixel values of the original image.
 
-To represent the style image, which is defined as the artistic features such as textures, pattern, brightnes,etc., it is mandatory to employ a feature space originally designed to capture texture information. As texture have different detail levels, this information is not located in just one layer. The first convolution layers of each block are used to achieve a representation in all detail levels. Correlations between the different filter responses over the spatial extent of the feature maps are calculated. By including the feature correlations of multiple layers, it is obtained a stationary, multi-scale representation of the input image, which captures its texture information but not the global arrangement.
+To represent the **style image**, which is defined as the artistic features such as textures, pattern, brightnes,etc., it is mandatory to employ a feature space originally designed to capture texture information. As texture have different detail levels, this information is not located in just one layer. Therefore, the first convolutional layer of each block are used to achieve a representation in all detail levels. Correlations between the different filter responses over the spatial extent of the feature maps are calculated. By including the feature correlations of multiple layers, it is obtained a stationary, multi-scale representation of the input image, which captures its texture information but not the global arrangement.
 
-### Loss functions
-The principle of neural style transfer is to define two loss functions, one that describes how different the content of two images are, Lcontent, and one that describes the difference between the two images in terms of their style, Lstyle. Then, given three images, a desired style image, a desired content image, and the input image (initialized with the content image or some noise), we try to transform the input image to minimize the content distance with the content image and its style distance with the style image.
+### Loss Functions
+The principle of neural style transfer is to define two loss functions, one that describes how different the content of two images are, Lcontent, and one that describes the difference between the two images in terms of their style, Lstyle. Then, given three images, a desired style image, a desired content image, and the input image (initialized with the content image or some noise), we try to transform the input image to joinly minimize the content distance with the content image and the style distance with the style image.
 In summary, we’ll take the base input image, a content image that we want to match, and the style image that we want to match. We’ll transform the base input image by minimizing the content and style distances (losses) via backpropagation, creating an image that mixes the content and the style of both images.
 
-In this case, the loss function will be formed by the content-image loss function --which represents how far is the generated image from the content one-- and the style-image loss function --which represents how well the style has been emulated--. Alpha and Beta are the weighting factors for content style reconstruction. The proportion between content weight and style weight determine the result. Change the values but keep the proportion doesn't change the final result. For that reason, some times these weigh are representend with just one parameter (In the formula bewlo, beta is set to 1).
+Notice the parameters Alpha and Beta, which are the weighting factors for content style reconstruction. It will be the proportion between content and style weights what will determine if the result prioritizes the content or the style. Also notice that what really matters is the proportion between them, that is why in some equations we find just one parameter (in those cases we assume Beta = 1).
 <p align="center">
   <img width="460" src="https://cdn-images-1.medium.com/max/1600/1*Wd0L4_LA77g5cLWon7L3Hw.png">
   <img width="460" src="https://cdn-images-1.medium.com/max/1600/1*3LnRslYfEIqdLmVDP3PP3w.png">
   <img width="460" src="https://cdn-images-1.medium.com/max/1600/1*F3yL2YQCQ3BH3cGWBRF9Hw.png">
 </p>
-The layers used habitually for Style Loss Function are: conv1_1, conv2_1, conv3_1, conv4_1, conv5_1.
+
+The layers used in this Basic NST implementation for Style Loss Function are: conv1_1, conv2_1, conv3_1, conv4_1, conv5_1.
 
 ### Gram Matrix
-The Gram Matrix is used to compare both the style image and the output one.
-The style representation of an image is described as the correlation of the different filter responses given by the Gram matrix.
-Given the first layer of the trained network a CxHxW vector space is obtained, where C is the number of filters, H is the height of the image and W the width. From these parameters, we compute the Gram Matrix. To obtain it, different rows are chosen and their inner product is computed in order to see which neurons tend to be activated at the same time.
+The Gram Matrix is used to compare both the style image and the output one, layer by layer. The **style representation of an image** is described as the correlation of the different convolutional filter responses given by the Gram matrix.
+
+For example, given the first layer of the network, a CxHxW vector space is obtained, where C is the number of filters, H is the height of the image and W the width. From these parameters, we compute the Gram Matrix by computing the dot product between different rows, in order to see which features tend to occur at the same time -i.e. which neurons tend are activated simultaneously.
+
 <p align="center">
   <img width="100" src="Utils/formula1.png">
 </p>
-"where Gˡ is the inner product between the both vectorized feature maps in layer l. We can see that Gˡ, generated over the feature map for a given image represents the correlation between feature maps i and j."
+
+where Gˡ is the inner product between both vectorized feature maps in layer l. Gˡ, generated over the feature maps for a given image, represents the correlation between feature maps i and j.
 
 ### Main hyperparameters
-
-The follow hyperparameters can be used to modify the output of the transfer style. Differents tests have been done changing the different defauled values and will be discussed in the results section.
+The following hyperparameters can be used to modify the output of the transfer style. Differents tests have been done changing the different default values and will be discussed in the results section.
 
 - Content weight: weight of the content image in the generated image. Value by default: 0.25.
 
@@ -94,16 +98,14 @@ The follow hyperparameters can be used to modify the output of the transfer styl
 - Preserve color: apply modifications in image style in order to preserve color from the content image. By default this option is off.
 
 ## Improved Neural Style Transfer
-
 This is a variation of the basic neural style transfer. The main improvements are:
 
 - **Geometric layer weight adjustment for style inference**: The separation between style and content is reduced by using the same layers for both of them (instead of just one for content and a bunch for style). Since the content/style information is gathered in different layers, the following geometric weighting is applied:
 <p align="center">
   <img width="260" src="Utils/formula.png">
 </p>
-   Where D is the number of layers and d(l) is the deepness of the layer l with respect to the total number of gathered layers. 
-
-   Notice that the style weight decreases with the deepness of the layer whereas the content one increases. This make sense, since the high level features (which are useful for the content information) are gathered in the deeper layers. This improvement increases the quality of the output image.
+<p>
+     Where D is the number of layers and d(l) is the deepness of the layer l with respect to the total number of gathered layers. Notice that the style weight decreases with the deepness of the layer whereas the content one increases. This make sense, since the high level features (which are useful for the content information) are gathered in the deeper layers. This improvement increases the quality of the output image.</p>
 
 - **Using all 16 convolutional layers of VGG-19 for style inference**: Instead of using just some layers for the style feature extraction, the paper proposes to use all the convolutional layers of the VGG19.
           
