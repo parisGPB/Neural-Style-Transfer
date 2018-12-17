@@ -108,16 +108,9 @@ This is a variation of the basic neural style transfer. The main improvements ar
 In general, the outputs of the image are scarce: in all the layers, each filter has few activations different from the    spatial dimensions. This results in the scattering ot the Gram matrices, at the expense of the transfer quality of the style. Gram matrices contain a large number of zero entries, leaving too much freedom for the optimization procedure to interpret them incorrectly.
 This problem can be reduced by applying changed activations to eliminate dispersion.
 
-    Original Gram Matrix:
-<p align="center">
-  <img width="100" src="Utils/formula1.png">
-</p>
-
-   
-    Gram Matrix with Shift activation:
-<p align="center">
-  <img width="200" src="Utils/formula2.png">
-</p>     
+| Original Gram Matrix | Gram Matrix with Shift activation |
+|:--------------------:|:---------------------------------:|
+|<p><img width="100" src="Utils/formula1.png"></p>|<p><img width="200" src="Utils/formula2.png"></p>|  
 
 - **Correlation Chain**
 Style information is captured by a set of Gram matrices calculated through correlations within the same layer. 
