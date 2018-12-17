@@ -264,6 +264,6 @@ Usually, style transfer start drawing from random image, but can also work over 
     (Figure 29)  Initialization = Gray
     (Figure 30)  Initialization = Content
 
-The rest of the results can be checked in the directory. Each experiment has the first 10 images of all iterations and multiples of 10 to the end. In each experiment, loss, time and execution improvement functions can be check as well as the .txt file that contains all the simulation parameters. 
+The rest of the results can be checked in the directory. Each experiment has the first 10 images of all iterations and multiples of 10 to the end. In each experiment, loss, time and execution improvement functions can be check as well as the .txt file that contains all the simulation parameters. Because of the limited execution time in Google Cloud, the last 8 tests do not contain the plots of this functions because the execution was performed using Colab. Despite this, the final output image at iteration number 100 is preserved to analyze the final impact of the variables changed.
 
 Our [Google Doc images](https://docs.google.com/document/d/1aKH6Gn1-q3Uh38uj0VJ1gHty0znnJ-eQxN1pytQL_uU/edit#)
