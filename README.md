@@ -4,6 +4,14 @@ This project is carried out by ETSETB students for the Deep Learning for Artific
 
 Our [notebook](https://telecombcn-dl.github.io/2018-dlai-team5/)
 
+    The workload has been divided as follows:
+     - Basic and Improved NST notebook implementations by Clara and Guillem.
+     - Google Cloud Platform set up and management by Marc.
+     - Github notebook and management by Clara and Guillem.
+     - Research on the state-of-the-art techniques by Cristian.
+     - Tests and analysis by Marc and Cristian.
+     - Presentation by Clara and Guillem
+
 ## Index:
 1. Goals
 2. What is Style Transfer?
