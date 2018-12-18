@@ -159,7 +159,7 @@ This network comprises five residual blocks. The first and last layers use 9×9 
 **2. Loss network**
 Loss function computes a scalar value measuring the difference between the output image and a target image. The Image Transformation Network is trained using stochastic gradient descent to minimize a weighted combination of both already-known loss functions (style and content).
 
-# ?AIXO VA ABAIX?
+
 Instance Normalization is used to replace batch normalization. While batch normalization applies the normalization to a whole batch of images, instance Normalization works for a single image separately. The objective is to replace every batch normalization in the generator network with the instance normalization in order to prevent instance-specific mean and covariance shift simplifying the learning process.
 
 Batch Normalization
